@@ -1,2 +1,472 @@
+    $yellow: #FCD800;
+    $blue: #00A6CA;
+    $black: #000000;
+    $orange: #F16E00;
+    $red: #d74025;
+    $white: #ffffff;
+    $darkblue: #007892;
+    $lightgray: #dddddd;
+    $mediumgray: #c1c1c1;
+    $darkgray: #707070;
 
-    $maincolor: red;
+
+    /* Headings */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: Intro, "Trebuchet MS", Helvetica, Arial, sans-serif;
+    color: #000000;
+    font-weight: 600; }
+    h1.underline, h2.underline, h3.underline, h4.underline, h5.underline, h6.underline, .h1.underline, .h2.underline, .h3.underline, .h4.underline, .h5.underline, .h6.underline {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.131); }
+  
+  h3 {
+    color: #006685; }
+  
+  h1, .primaryHeadline {
+    font-size: 22px;
+    line-height: 1.25em;
+    font-weight: 300; }
+  
+  h2, .secondaryHeadline {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400; }
+  
+  h3, .introOne {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 600; }
+  
+  h4, .introTwo {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600; }
+  
+  h5, .labelHead {
+    /* Labels */
+    font-size: 16px;
+    font-family: IntroCaps, "Trebuchet MS", Helvetica, Arial, sans-serif;
+    font-weight: 600; }
+  
+  h6, .eyebrow {
+    /* Eyebrows */
+    font-size: 10px;
+    font-family: IntroCaps, "Trebuchet MS", Helvetica, Arial, sans-serif;
+    font-weight: 600; }
+  
+  .description {
+    font-size: 14px;
+    line-height: 18px; }
+  
+  /* Bullets */
+  ul, ol {
+    margin: 0;
+    padding: 0; }
+    ul li, ol li {
+      padding: 0;
+      margin: 0 0 5px 1.3em;
+      font-size: 1em;
+      line-height: 1.3em; }
+    ul ul li, ul ol li, ol ul li, ol ol li {
+      margin: 0 0 5px 50px; }
+  
+  ul li {
+    margin-left: 0;
+    list-style-type: none; }
+  
+  ul.bullets {
+    padding: 0 0 0 20px; }
+    ul.bullets li {
+      margin-left: 20px; }
+      ul.bullets li:before {
+        content: "\2192";
+        float: left;
+        width: 20px;
+        margin-left: -20px; }
+    ul.bullets ul li:before {
+      content: "\00B7";
+      float: left;
+      width: 20px;
+      margin-left: -20px; }
+  
+  /* Links */
+  a {
+    color: #006685;
+    outline: none;
+    text-decoration: underline; }
+    a:hover i {
+      text-decoration: none; }
+    a:focus {
+      outline: none; }
+
+      /* Fancy Labels in Fields */
+.inFieldLabels {
+    padding-top: 24px; }
+    .inFieldLabels .form-group {
+      position: relative;
+      padding-top: 20px; }
+      .inFieldLabels .form-group label, .inFieldLabels .form-group .label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        -webkit-transition: font-size .5s, color .5s, left .1s, top .1s;
+        /* Safari */
+        transition: font-size .5s, color .5s, left .1s, top .1s;
+        -webkit-transition-timing-function: linear;
+        /* Safari and Chrome */
+        transition-timing-function: linear; }
+        .inFieldLabels .form-group label.inForm, .inFieldLabels .form-group .label.inForm {
+          top: 27px;
+          left: 10px;
+          display: block;
+          font-size: 18px;
+          color: #707070; }
+        .inFieldLabels .form-group label.error, .inFieldLabels .form-group .label.error {
+          position: relative;
+          height: auto; }
+      .inFieldLabels .form-group .form-control {
+        height: 36px;
+        font-size: 18px; }
+  
+  /* Forms Controls */
+  .form-control {
+    color: #000000;
+    height: 36px;
+    padding: 6px 8px;
+    border-radius: 0; }
+  
+  textarea {
+    resize: none; }
+  
+  textarea,
+  input[type="text"],
+  input[type="password"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="week"],
+  input[type="number"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  .uneditable-input,
+  select,
+  .form-control {
+    border: 1px solid rgba(0, 0, 0, 0.131);
+    background-color: #ffffff;
+    background-position: top left;
+    background-repeat: no-repeat;
+    box-shadow: none; }
+  
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="time"]:focus,
+  input[type="week"]:focus,
+  input[type="number"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="search"]:focus,
+  input[type="tel"]:focus,
+  input[type="color"]:focus,
+  .uneditable-input:focus,
+  select:focus,
+  .form-control:focus {
+    border-color: #00A6CA;
+    border-width: 2px;
+    box-shadow: none;
+    outline: none; }
+  
+  select, button, .outline {
+    border: 1px solid #707070; }
+  
+  .ie select {
+    font-family: 'Arial Narrow', Arial; }
+  
+  .checkbox {
+    margin-top: 0;
+    margin-bottom: 0; }
+  
+  .input-group-addon {
+    background-color: rgba(0, 0, 0, 0.131);
+    border-color: #707070;
+    color: #000000;
+    border-radius: 0; }
+  
+  /* Placeholders */
+  ::-webkit-input-placeholder {
+    color: #707070; }
+  
+  :-moz-placeholder {
+    /* Firefox 18- */
+    color: #707070; }
+  
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #707070; }
+  
+  :-ms-input-placeholder {
+    color: #707070; }
+  
+  /* Read Only and Disabled Styles */
+  input[readonly], select[readonly], textarea[readonly], .form-control[readonly] {
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.131);
+    font-weight: 700;
+    background-color: transparent;
+    background-image: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  
+  input[disabled="disabled"], select[disabled="disabled"], .form-control[disabled], fieldset[disabled] .form-control {
+    border: 1px solid #eeeeee;
+    font-weight: 700;
+    background-color: white;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  
+  .checkbox[disabled="disabled"] {
+    opacity: .4; }
+  
+  /* Placeholder hint text color overrides */
+  #mainContent .form-control::-webkit-input-placeholder {
+    /* Chrome and Safari */
+    color: rgba(0, 0, 0, 0.131); }
+  
+  #mainContent .form-control:-moz-placeholder {
+    /* Firefox 18- */
+    color: rgba(0, 0, 0, 0.131); }
+  
+  #mainContent .form-control::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgba(0, 0, 0, 0.131); }
+  
+  #mainContent .form-control:-ms-input-placeholder {
+    /* IE */
+    color: rgba(0, 0, 0, 0.131); }
+  
+  .placeholder-visible, .form-control.placeholder-visible {
+    /* WebShims Placeholder */
+    color: rgba(0, 0, 0, 0.131) !important; }
+  
+  /* Content that is a Form Control when the screen is editable */
+  strong.content {
+    float: left;
+    width: 100%;
+    line-height: 1em;
+    margin-bottom: 12px; }
+  
+  .form-control-static {
+    font-weight: 700; }
+
+/* Style for Form Element Changes */
+input.changed, select.changed, textarea.changed {
+    border: 1px solid #00A6CA; }
+  
+  /* Button Styles */
+  /* Mixin for generating new styles */
+  .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: none; }
+  
+  /* Common styles */
+  a.btn {
+    text-decoration: none; }
+  
+  .btn {
+    padding-top: 5px;
+    padding-right: 24px;
+    padding-bottom: 11px;
+    padding-left: 24px;
+    height: 36px;
+    font-family: IntroCaps, "Trebuchet MS", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1em;
+    text-shadow: none;
+    border-radius: 0;
+    border-width: 4px;
+    border-style: solid;
+    background-image: none;
+    -webkit-transition: padding-top .5s, padding-bottom .5s, height .5s;
+    transition: padding-top .5s, padding-bottom .5s, height .5s;
+    /* Remove the gradient for the pressed/active state */ }
+    .btn:active, .btn.active {
+      background-image: none; }
+    .btn.slim {
+      padding-top: 0;
+      padding-bottom: 9px;
+      height: 29px; }
+    .btn .fa {
+      margin-bottom: -6px; }
+    .btn[disabled] {
+      opacity: 0.4; }
+    .btn.tui-orange-tall-btn {
+      height: auto;
+      padding-top: 12px;
+      padding-bottom: 18px;
+      padding-right: 44px; }
+      .btn.tui-orange-tall-btn span {
+        float: left;
+        text-align: left;
+        line-height: 130%; }
+      .btn.tui-orange-tall-btn i.fa, .btn.tui-orange-tall-btn span.fa {
+        float: right;
+        margin-top: 10px;
+        margin-right: -22px;
+        font-size: 18px; }
+      .btn.tui-orange-tall-btn span.fa {
+        line-height: normal; }
+  
+  .shadow {
+    -webkit-box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.08);
+    -moz-box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.08);
+    box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.08); }
+    .shadow:active {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      position: relative;
+      left: 2px;
+      top: 2px; }
+  
+  /* Apply the mixin to the buttons */
+  .btn-default, .btn-default[disabled] {
+    background-color: #ffffff;
+    border-color: #000000;
+    color: #000000; }
+    .btn-default:hover, .btn-default:focus, .btn-default[disabled]:hover, .btn-default[disabled]:focus {
+      background-color: #e3e3e3;
+      border-color: black;
+      color: #000000; }
+  
+  .btn-primary, .btn-primary[disabled] {
+    background-color: #FCD800;
+    border-color: #FCD800;
+    color: #000000; }
+    .btn-primary:hover, .btn-primary:focus, .btn-primary[disabled]:hover, .btn-primary[disabled]:focus {
+      background-color: #c4a800;
+      border-color: #c4a800;
+      color: #000000; }
+  
+  .btn-secondary, .btn-secondary[disabled] {
+    background-color: #00A6CA;
+    border-color: #00A6CA;
+    color: #ffffff; }
+    .btn-secondary:hover, .btn-secondary:focus, .btn-secondary[disabled]:hover, .btn-secondary[disabled]:focus {
+      background-color: #007892;
+      border-color: #007892;
+      color: #ffffff; }
+  
+  .btn-success, .btn-success[disabled] {
+    background-color: #008A00;
+    border-color: #008A00;
+    color: #ffffff; }
+    .btn-success:hover, .btn-success:focus, .btn-success[disabled]:hover, .btn-success[disabled]:focus {
+      background-color: #005200;
+      border-color: #005200;
+      color: #ffffff; }
+  
+  .btn-info, .btn-info[disabled] {
+    background-color: #00A6CA;
+    border-color: #00A6CA;
+    color: #ffffff; }
+    .btn-info:hover, .btn-info:focus, .btn-info[disabled]:hover, .btn-info[disabled]:focus {
+      background-color: #007892;
+      border-color: #007892;
+      color: #ffffff; }
+  
+  .btn-warning, .btn-warning[disabled] {
+    background-color: #F16E00;
+    border-color: #F16E00;
+    color: #ffffff; }
+    .btn-warning:hover, .btn-warning:focus, .btn-warning[disabled]:hover, .btn-warning[disabled]:focus {
+      background-color: #b95400;
+      border-color: #b95400;
+      color: #ffffff; }
+  
+  .btn-danger, .btn-danger[disabled] {
+    background-color: #D74025;
+    border-color: #D74025;
+    color: #ffffff; }
+    .btn-danger:hover, .btn-danger:focus, .btn-danger[disabled]:hover, .btn-danger[disabled]:focus {
+      background-color: #a7321d;
+      border-color: #a7321d;
+      color: #ffffff; }
+  
+  /* Button Colors */
+  .tui-orange-btn, .tui-orange-btn[disabled] {
+    background-color: #F16E00;
+    border-color: #F16E00;
+    color: #ffffff; }
+    .tui-orange-btn:hover, .tui-orange-btn:focus, .tui-orange-btn[disabled]:hover, .tui-orange-btn[disabled]:focus {
+      background-color: #b95400;
+      border-color: #b95400;
+      color: #ffffff; }
+  
+  .btn-white, .btn-white[disabled] {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #000000; }
+    .btn-white:hover, .btn-white:focus, .btn-white[disabled]:hover, .btn-white[disabled]:focus {
+      background-color: #e3e3e3;
+      border-color: #e3e3e3;
+      color: #000000; }
+  
+  .btn-gray, .btn-gray[disabled] {
+    background-color: #dddddd;
+    border-color: #dddddd;
+    color: #000000; }
+    .btn-gray:hover, .btn-gray:focus, .btn-gray[disabled]:hover, .btn-gray[disabled]:focus {
+      background-color: #c1c1c1;
+      border-color: #c1c1c1;
+      color: #000000; }
+  
+  .btn-orange, .btn-orange[disabled] {
+    background-color: #F16E00;
+    border-color: #F16E00;
+    color: #000000; }
+    .btn-orange:hover, .btn-orange:focus, .btn-orange[disabled]:hover, .btn-orange[disabled]:focus {
+      background-color: #b95400;
+      border-color: #b95400;
+      color: #000000; }
+  
+  .btn-yellow, .btn-yellow[disabled] {
+    background-color: #FCD800;
+    border-color: #FCD800;
+    color: #000000; }
+    .btn-yellow:hover, .btn-yellow:focus, .btn-yellow[disabled]:hover, .btn-yellow[disabled]:focus {
+      background-color: #c4a800;
+      border-color: #c4a800;
+      color: #000000; }
+  
+  .btn-blue, .btn-blue[disabled] {
+    background-color: #00A6CA;
+    border-color: #00A6CA;
+    color: #000000; }
+    .btn-blue:hover, .btn-blue:focus, .btn-blue[disabled]:hover, .btn-blue[disabled]:focus {
+      background-color: #007892;
+      border-color: #007892;
+      color: #000000; }
+  
+  .btn-default:hover {
+    border-color: #707070; }
+  
+  .btn-default:active {
+    box-shadow: inset 0px 4px 3px -2px rgba(0, 0, 0, 0.131); }
+  
+  .btn-outline {
+    background-color: #ffffff; }
+    .btn-outline :hover {
+      background-color: inherit; }
+  
+  .btn-pill {
+    border-radius: 500px; }
+  
