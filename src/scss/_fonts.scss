@@ -1,0 +1,9 @@
+$font_path: '../assets/fonts/';
+ 
+ @font-face {
+     font-family: 'Intro';
+     font-style: normal;
+     font-weight: normal;
+     src: url($font_path + 'introregular-webfont.woff2') format('woff2'),
+          url($font_path + 'introregular-webfont.woff') format('woff'),
+ }

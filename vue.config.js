@@ -6,11 +6,10 @@ module.exports = {
         sass: {
           data: ` 
             @import "@/scss/_globals.scss";
+            @import "@/scss/_fonts.scss";
           `
         }
       }
     }
   };
-
-
 
