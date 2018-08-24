@@ -49,34 +49,32 @@
 							<table class="table">
 									<tbody>
 											<tr>
-													<td>TLOxp RPC % Increase</td>
-													<td>{{rpc_increase}}%</td>
+                                                <td>TLOxp RPC % Increase</td>
+                                                <td>{{rpc_increase}}%</td>
 											</tr>
 											<tr>
-													<td>RPC % with TLOxp</td>
-													<td>{{calcRPCwithTLOxp}}%</td>
+                                                <td>RPC % with TLOxp</td>
+                                                <td>{{calcRPCwithTLOxp}}%</td>
 											</tr>
 											<tr>
-													<td>PTP %</td>
-													<td>{{current_ptp}}%</td>
+                                                <td>PTP %</td>
+                                                <td>{{current_ptp}}%</td>
 											</tr>
 											<tr>
-													<td>Cures w/ TLOxp</td>
-													<td>{{calcNumberCuresWithTLOxp}}</td>
+                                                <td>Cures w/ TLOxp</td>
+                                                <td>{{calcNumberCuresWithTLOxp}}</td>
 											</tr>
 											<tr>
-													<td>Cures w/ TLOxp</td>
-													<td>${{calcCostCuresWithTLOxp}}</td>
+                                                <td>Cures w/ TLOxp</td>
+                                                <td>${{calcCostCuresWithTLOxp}}</td>
 											</tr>
 									</tbody>
 							</table>
 
-									<div class="col-lg-12 bottom-right-block">
-											<h3>
-													Monthly Cures<br>due to TransUnion:
-											</h3>
-											<h2>${{calcTotalMonthlyCures}}</h2>
-									</div>
+                        <div class="col-lg-12 bottom-right-block">
+                                <h3>Monthly Cures<br>due to TransUnion:</h3>
+                                <h2>${{calcTotalMonthlyCures}}</h2>
+                        </div>
 
 					</div> <!-- /col-6 -->
         
@@ -135,20 +133,20 @@
 							<table class="table">
 									<tbody>
 											<tr>
-													<td>TLOxp RPC % Increase</td>
-													<td>{{rpc_increase}}%</td>
+                                                <td>TLOxp RPC % Increase</td>
+                                                <td>{{rpc_increase}}%</td>
 											</tr>
 											<tr>
-													<td>New RPC rate with TLOxp</td>
-													<td>{{calcRPCwithTLOxp}}%</td>
+                                                <td>New RPC rate with TLOxp</td>
+                                                <td>{{calcRPCwithTLOxp}}%</td>
 											</tr>
                                             <tr>
-													<td>TLOxp cost/RPC</td>
-													<td>${{calcTLOxpCostPerRPC}}</td>
+                                                <td>TLOxp cost/RPC</td>
+                                                <td>${{calcTLOxpCostPerRPC}}</td>
 											</tr>
 											<tr>
-													<td>Savings in cost/RPC</td>
-													<td>${{calcCostSavings}}</td>
+                                                <td>Savings in cost/RPC</td>
+                                                <td>${{calcCostSavings}}</td>
 											</tr>
 									</tbody>
 							</table>
@@ -167,52 +165,31 @@
 
        <!--- ///// Section 3 /////// -->
     <div class="row">
-    <!-- <div class="col-md-6 right-block">
-        <table class="table">
-            <tbody>
-                <tr>
-                    <td>TLOxp non-RPC calls mins/hour</td>
-                    <td>{{calcNonRPCcallsTLOxp}}</td>
-                </tr>
-                <tr>
-                    <td>Time savings increasing RPC/hour/rep</td>
-                    <td>{{calcTimeSavingsPerRep}}</td>
-                </tr>
-                <tr>
-                    <td>Time savings increasing RPC/hour/team</td>
-                    <td>${{calcTimeSavingsPerTeam}}</td>
-                </tr>
-                <tr>
-                    <td>Time savings increasing RPC/hour/team/month</td>
-                    <td>${{calcTimeSavingsPerMonth}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div> -->
-    <div class="col-md-6 col-md-offset-6 summary">
-        <h2><span class="blue">Full Time Employee Savings</span> <br> Based on your inputs:</h2>
-        <table class="table">
-            <tbody>
-                <tr>
-                    <td>TLOxp non-RPC calls mins/hour</td>
-                    <td>{{calcNonRPCcallsTLOxp}}</td>
-                </tr>
-                <tr>
-                    <td>Time savings increasing RPC/hour/rep</td>
-                    <td>{{calcTimeSavingsPerRep}}</td>
-                </tr>
-                <tr>
-                    <td>Time savings increasing RPC/hour/team</td>
-                    <td>${{calcTimeSavingsPerTeam}}</td>
-                </tr>
-                <tr>
-                    <td>Time savings increasing RPC/hour/team/month</td>
-                    <td>${{calcTimeSavingsPerMonth}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    </div>
+        <div class="col-md-6 col-md-offset-6 summary">
+            <h2><span class="blue">Full Time Employee Savings</span> <br> Based on your inputs:</h2>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td>TLOxp non-RPC calls mins/hour</td>
+                        <td>{{calcNonRPCcallsTLOxp}}</td>
+                    </tr>
+                    <tr>
+                        <td>Time savings increasing RPC/hour/rep</td>
+                        <td>{{calcTimeSavingsPerRep}}</td>
+                    </tr>
+                    <tr>
+                        <td>Time savings increasing RPC/hour/team</td>
+                        <td>${{calcTimeSavingsPerTeam}}</td>
+                    </tr>
+                    <tr>
+                        <td>Time savings increasing RPC/hour/team/month</td>
+                        <td>${{calcTimeSavingsPerMonth}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>FTE savings/year:</h3>
+            <h2 class="totalFTE">{{calcFTEsavingsPerYr}}</h2>
+        </div>
     </div>
 </div>
 </template>
@@ -352,17 +329,13 @@ export default {
 .left-block {
     border-right: 1px solid #A9A9A9;
     padding: 0;
-        background: rgba(0,0,0,0.04);
+    background: rgba(0,0,0,0.04);
   }
 
 .right-block {
     padding-left: 0!important;
     padding-right: 0!important;
     padding-top: 4%;
-
-    h3 {
- 
-    }
 
     h2 {
         text-align: center;
@@ -452,7 +425,7 @@ label {
 }
 
 .sectionTitle {
-    background-color:#00A6CA;;
+    background-color:#00A6CA;
     padding: 2.7%;
     margin-top: 0!important;
     text-align: center;
@@ -477,13 +450,12 @@ label {
 }
 
 .blue {
-    color: #006685;
+    color: #00A6CA;
 }
 
 .summary {
-    padding-left: 0!important;
-    padding-right: 0!important;
-    padding-top: 4%;
+    border: 1px solid #A9A9A9;
+    margin-top: 1.5em;
 
     h2 {
         text-align: center;
@@ -491,9 +463,21 @@ label {
         font-size: 1.7em;
         line-height: 1.5em;
         padding-bottom: .5em;
-        
     }
 
+    h3 {
+        font-size: 1.7em;
+        color: black;
+        line-height: 1.5em;
+        text-align: center;
+        padding-top: 1em;
+    }
+
+    .totalFTE {
+        font-family: IntroBold;
+        font-size: 4.5em;
+        line-height: 1em;
+    }
 }
 
 
