@@ -1,21 +1,22 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Hello World"/>
+  <div id="app" class="container">
+       <first-section></first-section>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FirstSection from './components/FirstSection.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    FirstSection
   }
 }
 </script>
 
 <style>
-
+body {
+  font-family: Intro,"Trebuchet MS",Helvetica,Arial,sans-serif; 
+}
 </style>

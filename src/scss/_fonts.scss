@@ -34,3 +34,10 @@ $font_path: '../assets/fonts/';
         url($font_path + 'introsemibolditalic-webfont.woff2') format('woff2'),
         url($font_path + 'introsemibolditalic-webfont.woff') format('woff');
 }
+
+@font-face {
+    font-family: 'tu-fontawesome';
+    src: 
+        url($font_path + 'tu-fontawesome-webfont.woff2') format('woff2'),
+        url($font_path + 'tu-fontawesome-webfont.woff') format('woff');
+}
