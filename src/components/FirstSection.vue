@@ -13,31 +13,38 @@
                         <h3 class="sectionTitle">Benefit to Delinquency/Chargeoffs</h3>
 							<form role="form">                     
 									<div class="form-group">
-											<label for="">Monthly # of accounts > 30 DQ <span class="fa tufa-info-circle"></span></label>
+											<label for="">Monthly # of accounts > 30 DQ</label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="number_of_accounts"/>
 									</div>
 									<div class="form-group">
-											<label for="">Average balance <span class="fa tufa-info-circle"></span></label>
+											<label for="">Average balance</label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="avg_balance"/> 
 									</div>
 									<div class="form-group">
-											<label for="">Total DQ portfolio balance <span class="fa tufa-info-circle"></span></label>
+											<label for="">Total DQ portfolio balance </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcTotalDQ"/> 
 									</div>
 									<div class="form-group currentRPC">
-											<label for="">Current RPC% <span class="fa tufa-info-circle"></span></label>
+											<label for="">Current RPC% </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="current_rpc">
 									</div>
 									<div class="form-group currentPTP">
-											<label for="">Current PTP% <span class="fa tufa-info-circle"></span></label>
+											<label for="">Current PTP% </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="current_ptp" >
 									</div>
 									<div class="form-group">
-											<label for=""># of cures monthly w/o TransUnion <span class="fa tufa-info-circle"></span></label>
+											<label for=""># of cures monthly w/o TransUnion </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcNumberOfCures" >
 									</div>
 									<div class="form-group">
-											<label for="">$ of cures monthly w/o TransUnion <span class="fa tufa-info-circle"></span></label>
+											<label for="">$ of cures monthly w/o TransUnion </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcCostOfCures">
 									</div>
 									<!-- <button class="btn">Calculate</button> -->
@@ -89,39 +96,48 @@
               <h3 class="sectionTitle">Department Efficiencies</h3>
 							<form role="form">                     
 									<div class="form-group">
-											<label for="">Number of reps <span class="fa tufa-info-circle"></span></label>
+											<label for="">Number of reps </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="number_of_reps"/>
 									</div>
 									<div class="form-group">
-											<label for="">Average calls/hr <span class="fa tufa-info-circle"></span></label>
+											<label for="">Average calls/hr </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="avg_calls"/> 
 									</div>
 									<div class="form-group">
-											<label for="">Average min/call <span class="fa tufa-info-circle"></span></label>
+											<label for="">Average min/call </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcAvgMinutes"/> 
 									</div>
 									<div class="form-group">
-											<label for="">Current RPC% <span class="fa tufa-info-circle"></span></label>
+											<label for="">Current RPC% </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="current_rpc" >
 									</div>
 									<div class="form-group">
-											<label for="">Average salary/rep <span class="fa tufa-info-circle"></span></label>
+											<label for="">Average salary/rep </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="avg_salary_per_rep">
 									</div>
                                     <div class="form-group">
-											<label for="">Hours in work year <span class="fa tufa-info-circle"></span></label>
+											<label for="">Hours in work year </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="hrs_in_work_year">
 									</div>
                                     <div class="form-group">
-											<label for="">Hourly cost/rep <span class="fa tufa-info-circle"></span></label>
+											<label for="">Hourly cost/rep </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcHrlyCostPerRepYrly">
 									</div>
                                     <div class="form-group currentRPC">
-											<label for="">Cost/call <span class="fa tufa-info-circle"></span></label>
+											<label for="">Cost/call </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcCostPerCallDE">
 									</div>
 									<div class="form-group currentPTP">
-											<label for="">Cost/RPC <span class="fa tufa-info-circle"></span></label>
+											<label for="">Cost/RPC </label>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcCostPerRPC " >
 									</div>
 									<!-- <button class="btn">Calculate</button> -->
@@ -307,6 +323,8 @@ export default {
 		}
     }  
 }
+
+
 </script>
 
 <style lang="scss">
@@ -440,9 +458,12 @@ label {
 
 .fa {
     font-family: tu-fontawesome;
-    color: #A9A9A9;
     font-weight: normal;
     position: relative;
+	font-size: 1.3em;
+	float: right;
+	color: #FCD800;
+    padding-right: .3em;
 }
 
 .fa-info-circle:before, .tufa-info-circle:before {
@@ -480,6 +501,116 @@ label {
     }
 }
 
+.tooltip {
+  display: block !important;
+  z-index: 10000;
+ 
+  .tooltip-inner {
+    background: #FCD800;
+    color: black;
+    border: #FCD800;
+    padding: 5px 10px 4px;
+	box-shadow: 3px 5px 5px rgba(black, .1);
+  }
+ 
+  .tooltip-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-color: #FCD800;
+    z-index: 1;
+  }
+ 
+  &[x-placement^="top"] {
+    margin-bottom: 5px;
+ 
+    .tooltip-arrow {
+      border-width: 5px 5px 0 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      bottom: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+ 
+  &[x-placement^="bottom"] {
+    margin-top: 5px;
+ 
+    .tooltip-arrow {
+      border-width: 0 5px 5px 5px;
+      border-left-color: transparent !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+      top: -5px;
+      left: calc(50% - 5px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+ 
+  &[x-placement^="right"] {
+    margin-left: 5px;
+ 
+    .tooltip-arrow {
+      border-width: 5px 5px 5px 0;
+      border-left-color: transparent !important;
+      border-top-color: transparent !important;
+      border-bottom-color: transparent !important;
+      left: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+ 
+  &[x-placement^="left"] {
+    margin-right: 5px;
+ 
+    .tooltip-arrow {
+      border-width: 5px 0 5px 5px;
+      border-top-color: transparent !important;
+      border-right-color: transparent !important;
+      border-bottom-color: transparent !important;
+      right: -5px;
+      top: calc(50% - 5px);
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+ 
+  &.popover {
+    $color: #f9f9f9;
+ 
+    .popover-inner {
+      background: $color;
+      color: black;
+      padding: 24px;
+      border-radius: 5px;
+      box-shadow: 0 5px 30px rgba(black, .1);
+    }
+ 
+    .popover-arrow {
+      border-color: $color;
+    }
+  }
+ 
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .15s, visibility .15s;
+  }
+ 
+  &[aria-hidden='false'] {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .15s;
+  }
+}
 
 
 
