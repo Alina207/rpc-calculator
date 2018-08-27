@@ -14,37 +14,37 @@
 							<form role="form">                     
 									<div class="form-group">
 											<label for="">Monthly # of accounts > 30 DQ</label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Number of accounts 30 days or greater in delinquent status' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="number_of_accounts"/>
 									</div>
 									<div class="form-group">
 											<label for="">Average balance</label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average balance of delinquent accounts 30 days or greater past due' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="avg_balance"/> 
 									</div>
 									<div class="form-group">
 											<label for="">Total DQ portfolio balance </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Total delinquent portfolio balance' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcTotalDQ"/> 
 									</div>
 									<div class="form-group currentRPC">
 											<label for="">Current RPC% </label>
-											<span class="fa tufa-info-circle" v-tooltip="{ content: 'You have new messages.' }"></span>
+											<span class="fa tufa-info-circle" v-tooltip="{ content: 'The number of successful efforts divided by the total number of contact efforts' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="current_rpc">
 									</div>
 									<div class="form-group currentPTP">
 											<label for="">Current PTP% </label>
-											<span class="fa tufa-info-circle" v-tooltip="{ content: 'You have new messages.' }"></span>
+											<span class="fa tufa-info-circle" v-tooltip="{ content: 'The percent of delinquent accounts that have an agreement such as a promissory note in place' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="current_ptp" >
 									</div>
 									<div class="form-group">
 											<label for=""># of cures monthly w/o TransUnion </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'The current number of monthly accounts that are brought back to current status from delinquent status without the use of TransUnion solutions' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcNumberOfCures" >
 									</div>
 									<div class="form-group">
 											<label for="">$ of cures monthly w/o TransUnion </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'The dollar value of monthly cures without the use of TransUnion solutions' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="calcCostOfCures">
 									</div>
 									<!-- <button class="btn">Calculate</button> -->
@@ -53,31 +53,32 @@
 
 					<div class="col-md-6 right-block">
 							<h2>Based on your inputs:</h2>
-							<table class="table">
+							<div class="col-lg-12">
+								<table class="table">
 									<tbody>
-											<tr>
-                                                <td>TLOxp RPC % Increase</td>
-                                                <td>{{rpc_increase | percent}}</td>
-											</tr>
-											<tr>
-                                                <td>RPC % with TLOxp</td>
-                                                <td>{{calcRPCwithTLOxp | percent}}</td>
-											</tr>
-											<tr>
-                                                <td>PTP %</td>
-                                                <td>{{current_ptp | percent}}</td>
-											</tr>
-											<tr>
-                                                <td>Cures w/ TLOxp</td>
-                                                <td>{{calcNumberCuresWithTLOxp | formatNumber}}</td>
-											</tr>
-											<tr>
-                                                <td>Cures w/ TLOxp</td>
-                                                <td>{{calcCostCuresWithTLOxp | formatPrice }}</td>
-											</tr>
+										<tr>
+											<td>TLOxp RPC % Increase</td>
+											<td>{{rpc_increase | percent}}</td>
+										</tr>
+										<tr>
+											<td>RPC % with TLOxp</td>
+											<td>{{calcRPCwithTLOxp | percent}}</td>
+										</tr>
+										<tr>
+											<td>PTP %</td>
+											<td>{{current_ptp | percent}}</td>
+										</tr>
+										<tr>
+											<td>Cures w/ TLOxp</td>
+											<td>{{calcNumberCuresWithTLOxp | formatNumber}}</td>
+										</tr>
+										<tr>
+											<td>Cures w/ TLOxp</td>
+											<td>{{calcCostCuresWithTLOxp | formatPrice }}</td>
+										</tr>
 									</tbody>
-							</table>
-
+								</table>
+							</div>
                         <div class="col-lg-12 bottom-right-block">
                                 <h3>Monthly Cures<br>due to TransUnion:</h3>
                                 <h2>{{calcTotalMonthlyCures | formatPrice}}</h2>
@@ -97,47 +98,46 @@
 				<form role="form">                     
 					<div class="form-group">
 							<label for="">Number of reps </label>
-							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Number of collections department staff members' }"></span>
 							<input type="number" name="" class="form-control" v-model.number="number_of_reps"/>
 					</div>
 					<div class="form-group">
 							<label for="">Average calls/hr </label>
-							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average number of calls per hour by the entire collections department staff' }"></span>
 							<input type="number" name="" class="form-control" v-model.number="avg_calls"/> 
 					</div>
 					<div class="form-group">
 							<label for="">Average min/call </label>
-							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average number of calls per hour by the entire collections department staff' }"></span>
 							<input type="number" name="" class="form-control" v-model.number="calcAvgMinutes"/> 
 					</div>
 					<div class="form-group">
 							<label for="">Current RPC% </label>
-							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Current right party contact rate based on input in previous section' }"></span>
 							<input type="number" name="" class="form-control" v-model.number="current_rpc" >
 					</div>
 					<div class="form-group">
 							<label for="">Average salary/rep </label>
-							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average annual salary per staff member' }"></span>
 							<input type="number" name="" class="form-control" v-model.number="avg_salary_per_rep">
 					</div>
 					<div class="form-group">
 							<label for="">Hours in work year </label>
-							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
 							<input type="number" name="" class="form-control" v-model.number="hrs_in_work_year">
 					</div>
 					<div class="form-group">
 							<label for="">Hourly cost/rep </label>
-							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Total salaries divided by number of staff members on an hourly basis' }"></span>
 							<input type="number" name="" class="form-control" v-model.number="calcHrlyCostPerRepYrly">
 					</div>
 					<div class="form-group currentRPC">
 							<label for="">Cost/call </label>
-							<span class="fa tufa-info-circle" v-tooltip="{ content: 'You have new messages.' }"></span>
+							<span class="fa tufa-info-circle" v-tooltip="{ content: 'Cost per call' }"></span>
 							<input type="number" name="" class="form-control" v-model.number="calcCostPerCallDE">
 					</div>
 					<div class="form-group currentPTP">
 						<label for="">Cost/RPC </label>
-						<span class="fa tufa-info-circle" v-tooltip="{ content: 'You have new messages.' }"></span>
+						<span class="fa tufa-info-circle" v-tooltip="{ content: 'Cost per right party contact' }"></span>
 						<input type="number" name="" class="form-control" v-model.number="calcCostPerRPC">
 					</div>
 				</form>
@@ -184,39 +184,39 @@
 						<tbody>
 							<tr>
 								<td>Number of reps</td>
-								<td></td>
+								<td>{{number_of_reps | formatNumber}}</td>
 							</tr>
 							<tr>
 								<td>Average calls/hr</td>
-								<td></td>
+								<td>{{avg_calls | formatNumber}}</td>
 							</tr>
 							<tr>
 								<td>Average min/call</td>
-								<td></td>
+								<td>{{calcAvgMinutes | formatNumber}}</td>
 							</tr>
 							<tr>
 								<td>Current RPC%</td>
-								<td></td>
+								<td>{{current_rpc | toPercent}}</td>
 							</tr>
 							<tr>
 								<td>Average salary/rep</td>
-								<td></td>
+								<td>{{avg_salary_per_rep | formatPrice}}</td>
 							</tr>
 							<tr>
 								<td>Hours in month</td>
-								<td></td>
+								<td>{{hrs_in_work_month | formatNumber}}</td>
 							</tr>
 							<tr>
 								<td>Hourly cost/rep</td>
-								<td></td>
+								<td>{{calcHrlyCostPerRepMonthly | formatPrice}}</td>
 							</tr>
 							<tr>
 								<td>Cost/call</td>
-								<td></td>
+								<td>{{calcCostPerCallFTE | formatPrice}}</td>
 							</tr>
 							<tr>
 								<td>Non-RPC call mins/hours</td>
-								<td></td>
+								<td>{{calcNonRPCcallsTLOxp | formatNumber}}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -247,7 +247,14 @@
 				</div>
 			</div>
     	</div>
-    </div>
+    </div> <!-- end section-3 row -->
+	<div class="rpc-footer">
+		<p>*Assumed PTP brings account current, or delays charge off</p>
+		<p>** In a recent study conducted by an independent third party, TransUnion RPC phone data beat completive data solution providers, with an increase in RPC % ranging from 29.4% to as much as 282.6%. The data represented RPC % on hits worked – first position only; multiple agencies and asset classes. For the 12 months ending January 2017; 4 million records. </p>
+		<p>This calculator is intended to convey general information, including the potential financial benefits of improving your organization's Right Party Contact (RPC) rates. The information conveyed is not intended, nor should be construed or relied upon as legal advice. Please consult your own legal advisor or attorney with respect to your particular situation. While efforts have been made to ensure the information herein is up-to-date, it's not promised or guaranteed to be current, complete or up-to-date. You should consult a sales representative for further information.</p>
+		<p>Free trial offer is for new customers only, may be limited to certain services in our sole discretion, and subject to additional terms and conditions. TLOxp contains data governed by law and is subject to new account credentialing, which may include a site inspection and end user terms and conditions. Customer is responsible for the site inspection fee. The length of the free trial will be indicated at the time of the account approval.</p>
+		<p>The TLOxp solution is not provided by a consumer reporting agency and does not constitute a consumer report as these terms are defined by the Fair Credit Reporting Act. 15 U.S.C Section 1651 et seq ("FCRA"). The TLOxp solution may not be used in whole or in part as a factor in establishing an individual's creditworthiness or eligibility for credit, insurance or employment not for any other purpose under the FCRA.</p>
+	</div>
 </div>
 </template>
 
@@ -433,6 +440,7 @@ export default {
     background-color: #fef3b2;
     margin-top: 2em;
     text-align: center;
+	padding: 2em 0 3em 0;
 
     h3 {
         font-size: 1.7em;
@@ -521,6 +529,10 @@ label {
 
 }
 
+.section-2 .bottom-right-block {
+	padding: 4em 0 9em 0;
+}
+
 .fa {
     font-family: tu-fontawesome;
     font-weight: normal;
@@ -542,6 +554,7 @@ label {
 .summary {
     border: 1px solid #A9A9A9;
     margin-top: 1.5em;
+	padding-bottom: 2em;
 
     h2 {
         text-align: center;
@@ -574,8 +587,10 @@ label {
     background: #FCD800;
     color: black;
     border: #FCD800;
-    padding: 5px 10px 4px;
+    padding: 8px 8px 10px 10px;
 	box-shadow: 3px 5px 5px rgba(black, .1);
+	text-align: left;
+	font-family: Intro;
   }
  
   .tooltip-arrow {
@@ -678,7 +693,13 @@ label {
 }
 
 .left-sum {
-      border-right: 1px solid #A9A9A9;
+    border-right: 1px solid #A9A9A9;
+}
+
+.rpc-footer {
+	font-size: 1em;
+    color: #A9A9A9;
+    margin: 2em 0 2em 2em;
 }
 
 
