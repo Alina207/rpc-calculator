@@ -29,12 +29,12 @@
 									</div>
 									<div class="form-group currentRPC">
 											<label for="">Current RPC% </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+											<span class="fa tufa-info-circle" v-tooltip="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="current_rpc">
 									</div>
 									<div class="form-group currentPTP">
 											<label for="">Current PTP% </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+											<span class="fa tufa-info-circle" v-tooltip="{ content: 'You have new messages.' }"></span>
 											<input type="number" name="" class="form-control" v-model.number="current_ptp" >
 									</div>
 									<div class="form-group">
@@ -57,30 +57,30 @@
 									<tbody>
 											<tr>
                                                 <td>TLOxp RPC % Increase</td>
-                                                <td>{{rpc_increase}}%</td>
+                                                <td>{{rpc_increase | percent}}</td>
 											</tr>
 											<tr>
                                                 <td>RPC % with TLOxp</td>
-                                                <td>{{calcRPCwithTLOxp}}%</td>
+                                                <td>{{calcRPCwithTLOxp | percent}}</td>
 											</tr>
 											<tr>
                                                 <td>PTP %</td>
-                                                <td>{{current_ptp}}%</td>
+                                                <td>{{current_ptp | percent}}</td>
 											</tr>
 											<tr>
                                                 <td>Cures w/ TLOxp</td>
-                                                <td>{{calcNumberCuresWithTLOxp}}</td>
+                                                <td>{{calcNumberCuresWithTLOxp | formatNumber}}</td>
 											</tr>
 											<tr>
                                                 <td>Cures w/ TLOxp</td>
-                                                <td>${{calcCostCuresWithTLOxp}}</td>
+                                                <td>{{calcCostCuresWithTLOxp | formatPrice }}</td>
 											</tr>
 									</tbody>
 							</table>
 
                         <div class="col-lg-12 bottom-right-block">
                                 <h3>Monthly Cures<br>due to TransUnion:</h3>
-                                <h2>${{calcTotalMonthlyCures}}</h2>
+                                <h2>{{calcTotalMonthlyCures | formatPrice}}</h2>
                         </div>
 
 					</div> <!-- /col-6 -->
@@ -93,119 +93,160 @@
     <div class="row">
         <div class="col-md-12 section-2 wrapper">
 			<div class="col-md-6 left-block">
-              <h3 class="sectionTitle">Department Efficiencies</h3>
-							<form role="form">                     
-									<div class="form-group">
-											<label for="">Number of reps </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
-											<input type="number" name="" class="form-control" v-model.number="number_of_reps"/>
-									</div>
-									<div class="form-group">
-											<label for="">Average calls/hr </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
-											<input type="number" name="" class="form-control" v-model.number="avg_calls"/> 
-									</div>
-									<div class="form-group">
-											<label for="">Average min/call </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
-											<input type="number" name="" class="form-control" v-model.number="calcAvgMinutes"/> 
-									</div>
-									<div class="form-group">
-											<label for="">Current RPC% </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
-											<input type="number" name="" class="form-control" v-model.number="current_rpc" >
-									</div>
-									<div class="form-group">
-											<label for="">Average salary/rep </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
-											<input type="number" name="" class="form-control" v-model.number="avg_salary_per_rep">
-									</div>
-                                    <div class="form-group">
-											<label for="">Hours in work year </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
-											<input type="number" name="" class="form-control" v-model.number="hrs_in_work_year">
-									</div>
-                                    <div class="form-group">
-											<label for="">Hourly cost/rep </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
-											<input type="number" name="" class="form-control" v-model.number="calcHrlyCostPerRepYrly">
-									</div>
-                                    <div class="form-group currentRPC">
-											<label for="">Cost/call </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
-											<input type="number" name="" class="form-control" v-model.number="calcCostPerCallDE">
-									</div>
-									<div class="form-group currentPTP">
-											<label for="">Cost/RPC </label>
-											<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
-											<input type="number" name="" class="form-control" v-model.number="calcCostPerRPC " >
-									</div>
-									<!-- <button class="btn">Calculate</button> -->
-							</form>
-					</div> <!-- end col-6-->
-
-					<div class="col-md-6 right-block">
-							<h2>Based on your inputs:</h2>
-							<table class="table">
-									<tbody>
-											<tr>
-                                                <td>TLOxp RPC % Increase</td>
-                                                <td>{{rpc_increase}}%</td>
-											</tr>
-											<tr>
-                                                <td>New RPC rate with TLOxp</td>
-                                                <td>{{calcRPCwithTLOxp}}%</td>
-											</tr>
-                                            <tr>
-                                                <td>TLOxp cost/RPC</td>
-                                                <td>${{calcTLOxpCostPerRPC}}</td>
-											</tr>
-											<tr>
-                                                <td>Savings in cost/RPC</td>
-                                                <td>${{calcCostSavings}}</td>
-											</tr>
-									</tbody>
-							</table>
-
-                        <div class="col-lg-12 bottom-right-block">
-                            <h3>Monthly RPC Savings</h3>
-                                <h2>${{calcTotalMonthlyCures}}</h2>
-                            <h3>TLOxp new monthly RPC gained</h3>
-                                <h2>{{ calcMonthlyRPCgained }}</h2>
-                        </div>
-
-					</div> <!-- /col-6 -->
-        
+              	<h3 class="sectionTitle">Department Efficiencies</h3>
+				<form role="form">                     
+					<div class="form-group">
+							<label for="">Number of reps </label>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<input type="number" name="" class="form-control" v-model.number="number_of_reps"/>
+					</div>
+					<div class="form-group">
+							<label for="">Average calls/hr </label>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<input type="number" name="" class="form-control" v-model.number="avg_calls"/> 
+					</div>
+					<div class="form-group">
+							<label for="">Average min/call </label>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<input type="number" name="" class="form-control" v-model.number="calcAvgMinutes"/> 
+					</div>
+					<div class="form-group">
+							<label for="">Current RPC% </label>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<input type="number" name="" class="form-control" v-model.number="current_rpc" >
+					</div>
+					<div class="form-group">
+							<label for="">Average salary/rep </label>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<input type="number" name="" class="form-control" v-model.number="avg_salary_per_rep">
+					</div>
+					<div class="form-group">
+							<label for="">Hours in work year </label>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<input type="number" name="" class="form-control" v-model.number="hrs_in_work_year">
+					</div>
+					<div class="form-group">
+							<label for="">Hourly cost/rep </label>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'You have new messages.' }"></span>
+							<input type="number" name="" class="form-control" v-model.number="calcHrlyCostPerRepYrly">
+					</div>
+					<div class="form-group currentRPC">
+							<label for="">Cost/call </label>
+							<span class="fa tufa-info-circle" v-tooltip="{ content: 'You have new messages.' }"></span>
+							<input type="number" name="" class="form-control" v-model.number="calcCostPerCallDE">
+					</div>
+					<div class="form-group currentPTP">
+						<label for="">Cost/RPC </label>
+						<span class="fa tufa-info-circle" v-tooltip="{ content: 'You have new messages.' }"></span>
+						<input type="number" name="" class="form-control" v-model.number="calcCostPerRPC">
+					</div>
+				</form>
+			</div> <!-- end col-6 left-block -->
+			<div class="col-md-6 right-block">
+				<h2>Based on your inputs:</h2>
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>TLOxp RPC % Increase</td>
+							<td>{{rpc_increase | percent}}</td>
+						</tr>
+						<tr>
+							<td>New RPC rate with TLOxp</td>
+							<td>{{calcRPCwithTLOxp | percent}}</td>
+						</tr>
+						<tr>
+							<td>TLOxp cost/RPC</td>
+							<td>{{calcTLOxpCostPerRPC | formatPrice}}</td>
+						</tr>
+						<tr>
+							<td>Savings in cost/RPC</td>
+							<td>{{calcCostSavings | formatPrice}}</td>
+						</tr>
+					</tbody>
+				</table>
+			<div class="col-lg-12 bottom-right-block">
+				<h3>Monthly RPC Savings</h3>
+				<h2>{{calcTotalMonthlyCures | formatPrice}}</h2>
+				<h3>TLOxp new monthly RPC gained</h3>
+				<h2>{{ calcMonthlyRPCgained | formatNumber}}</h2>
+			</div>
+			</div> <!-- end col-6 right-block-->
         </div> <!-- end section 2 wrap col -->
     </div> <!-- end section 2 row -->
 
        <!--- ///// Section 3 /////// -->
     <div class="row">
-        <div class="col-md-6 col-md-offset-6 summary">
-            <h2><span class="blue">Full Time Employee Savings</span> <br> Based on your inputs:</h2>
-            <table class="table">
-                <tbody>
-                    <tr>
-                        <td>TLOxp non-RPC calls mins/hour</td>
-                        <td>{{calcNonRPCcallsTLOxp}}</td>
-                    </tr>
-                    <tr>
-                        <td>Time savings increasing RPC/hour/rep</td>
-                        <td>{{calcTimeSavingsPerRep}}</td>
-                    </tr>
-                    <tr>
-                        <td>Time savings increasing RPC/hour/team</td>
-                        <td>${{calcTimeSavingsPerTeam}}</td>
-                    </tr>
-                    <tr>
-                        <td>Time savings increasing RPC/hour/team/month</td>
-                        <td>${{calcTimeSavingsPerMonth}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            <h3>FTE savings/year:</h3>
-            <h2 class="totalFTE">{{calcFTEsavingsPerYr}}</h2>
-        </div>
+		<div class="col-md-12 summary">
+			<h2><span class="blue">Full Time Employee Savings</span> <br> Based on your inputs:</h2>
+			<div class="row">
+				<div class="col-md-6 left-sum">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>Number of reps</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Average calls/hr</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Average min/call</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Current RPC%</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Average salary/rep</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Hours in month</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Hourly cost/rep</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Cost/call</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>Non-RPC call mins/hours</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-6">
+					<table class="table">
+						<tbody>
+							<tr>
+								<td>TLOxp non-RPC calls mins/hour</td>
+								<td>{{calcNonRPCcallsTLOxp | formatNumber}}</td>
+							</tr>
+							<tr>
+								<td>Average calls/hr</td>
+								<td>{{calcTimeSavingsPerRep | formatNumber}}</td>
+							</tr>
+							<tr>
+								<td>Time savings increasing RPC/hour/team</td>
+								<td>{{calcTimeSavingsPerTeam | formatPrice}}</td>
+							</tr>
+							<tr>
+								<td>Time savings increasing RPC/hour/team/month</td>
+								<td>{{calcTimeSavingsPerMonth | formatPrice}}</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3>FTE savings/year:</h3>
+					<h2 class="totalFTE">{{calcFTEsavingsPerYr | formatNumber}}</h2>
+				</div>
+			</div>
+    	</div>
     </div>
 </div>
 </template>
@@ -225,14 +266,38 @@ export default {
             hrs_in_work_year:'2080',
             hrs_in_work_month: '160',
         }
-    },
+	},
+	filters: {
+		formatNumber: function(val) {
+      		return val.toLocaleString('en-US', { maximumFractionDigits: 0 });
+		},
+		formatPrice: function(val) {
+      		return '$' + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    	},
+		percent (val) {
+			return val.toLocaleString('en-US', { maximumFractionDigits: 0 }) + '%';
+		}
+	},
+	methods: {
+		toPercent: function(val) {
+      	return val * 0.01;
+		},
+		toCurrency: function (val) {
+			var input = input.replace(/[\D\s\._\-]+/g, "");
+				input = input ? parseInt( input, 10 ) : 0;
+
+				$this.val( function() {
+					return ( input === 0 ) ? "" : input.toLocaleString( "en-US" );
+				} );
+		} 
+	},
     computed: {
         calcTotalDQ: function(){
 			var totalDQ = (this.number_of_accounts * this.avg_balance);
 			return totalDQ;
 		},
 		calcNumberOfCures: function (){
-			var numberOfCures = ( (this.number_of_accounts * (this.current_rpc * .01)) * (this.current_ptp * .01) );
+			var numberOfCures = ( (this.number_of_accounts * this.toPercent(this.current_rpc)) * this.toPercent(this.current_ptp) );
 			return numberOfCures;
 		}, 
 		calcCostOfCures: function (){
@@ -240,8 +305,8 @@ export default {
 			return costOfCures; 
 		},
 		calcRPCwithTLOxp: function (){
-			var RPCwithTLOxp = ( ((this.rpc_increase * .01) + 1) * this.current_rpc ); // need to round
-			return RPCwithTLOxp; // ((this.rpc_increase * .01) + 1)
+			var RPCwithTLOxp = ( (this.toPercent(this.rpc_increase) + 1) * this.current_rpc ); 
+			return RPCwithTLOxp; 
 		},
 		calcNumberCuresWithTLOxp: function (){
 			var totalNumberCures = ( (this.number_of_accounts * this.calcRPCwithTLOxp) * (this.current_ptp * .0001) );
@@ -298,11 +363,11 @@ export default {
 			return costPerCallFTE;
 		},
 		calcNonRPCcalls: function () {
-			var nonRPCcalls = ( 60 - ( ( (this.current_rpc * .01) * this.avg_calls) * this.calcAvgMinutes) ) ;
+			var nonRPCcalls = ( 60 - ( ( this.toPercent(this.current_rpc) * this.avg_calls) * this.calcAvgMinutes) ) ;
 			return nonRPCcalls;
 		},
 		calcNonRPCcallsTLOxp: function () {
-			var nonRPCcallsTLOxp = ( 60 - ( ( (this.calcRPCwithTLOxp * .01) * this.avg_calls) * this.calcAvgMinutes) );
+			var nonRPCcallsTLOxp = ( 60 - ( ( this.toPercent(this.calcRPCwithTLOxp) * this.avg_calls) * this.calcAvgMinutes) );
 			return nonRPCcallsTLOxp;
 		},
 		calcTimeSavingsPerRep: function () {
@@ -462,7 +527,7 @@ label {
     position: relative;
 	font-size: 1.3em;
 	float: right;
-	color: #FCD800;
+	color: #A9A9A9;
     padding-right: .3em;
 }
 
@@ -569,7 +634,7 @@ label {
   }
  
   &[x-placement^="left"] {
-    margin-right: 5px;
+    margin-right: 7px;
  
     .tooltip-arrow {
       border-width: 5px 0 5px 5px;
@@ -610,6 +675,10 @@ label {
     opacity: 1;
     transition: opacity .15s;
   }
+}
+
+.left-sum {
+      border-right: 1px solid #A9A9A9;
 }
 
 
