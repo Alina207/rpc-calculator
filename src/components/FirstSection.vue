@@ -194,7 +194,7 @@
 							</tr>
 							<tr>
 								<td>Current RPC%</td>
-								<td>{{current_rpc | toPercent}}</td>
+								<td>{{current_rpc | percent}}</td>
 							</tr>
 							<tr>
 								<td>Average salary/rep</td>
@@ -429,7 +429,7 @@ export default {
 
     h2 {
         text-align: center;
-        font-family: IntroBold;
+        // font-family: IntroBold;
         font-size: 1.7em;
         line-height: 2em;
         
@@ -449,9 +449,10 @@ export default {
     }
 
     h2 {
-        font-family: IntroBold;
+        // font-family: IntroBold;
         font-size: 4.5em;
-        line-height: 1em;
+		line-height: 1em;
+		font-weight: 700;
     }
 }
 
@@ -508,11 +509,14 @@ form {
     padding: 0% 5% 5% 5%;
 }
 
+.form-group {
+	margin-top: 2em;
+}
+
 label {
     font-size: 1.2em;
-    line-height: 1.5em;
-    padding-top: 1.3%;
-    font-weight: bold;
+	float: left;
+    padding-bottom: .7em;
 }
 
 .sectionTitle {
@@ -535,12 +539,11 @@ label {
 
 .fa {
     font-family: tu-fontawesome;
-    font-weight: normal;
-    position: relative;
-	font-size: 1.3em;
+	// font-size: 1.3em;
 	float: right;
 	color: #A9A9A9;
-    padding-right: .3em;
+	padding-right: .3em;
+	position: relative;
 }
 
 .fa-info-circle:before, .tufa-info-circle:before {
@@ -558,7 +561,7 @@ label {
 
     h2 {
         text-align: center;
-        font-family: IntroBold;
+        // font-family: IntroBold;
         font-size: 1.7em;
         line-height: 1.5em;
         padding-bottom: .5em;
@@ -573,7 +576,7 @@ label {
     }
 
     .totalFTE {
-        font-family: IntroBold;
+        // font-family: IntroBold;
         font-size: 4.5em;
         line-height: 1em;
     }
@@ -590,7 +593,7 @@ label {
     padding: 8px 8px 10px 10px;
 	box-shadow: 3px 5px 5px rgba(black, .1);
 	text-align: left;
-	font-family: Intro;
+	// font-family: Intro;
   }
  
   .tooltip-arrow {
