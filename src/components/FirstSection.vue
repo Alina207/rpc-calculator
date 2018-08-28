@@ -537,12 +537,11 @@ label {
 }
 
 .fa {
-    font-family: tu-fontawesome;
+    // font-family: tu-fontawesome;
 	// font-size: 1.3em;
 	float: right;
 	color: #A9A9A9;
 	padding-right: .3em;
-	position: relative;
 }
 
 .fa-info-circle:before, .tufa-info-circle:before {
