@@ -1,6 +1,4 @@
-//  the “@” in vue-cli is an alias that points to /src
-//  uncomment when working locally, comment when doing a build
-
+//   the “@” in vue-cli is an alias that points to /src
 
 module.exports = {
     css: {
