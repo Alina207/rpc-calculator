@@ -26,7 +26,7 @@
 						<div class="form-group">
 							<label for="">Total DQ portfolio balance </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Total delinquent portfolio balance' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcTotalDQ"/> 
+							<input type="number" name="" class="form-control" v-model.number="calcTotalDQ" disabled/> 
 						</div>
 						<div class="form-group currentRPC">
 							<label for="">Current RPC% </label>
@@ -41,12 +41,12 @@
 						<div class="form-group">
 							<label for=""># of cures monthly w/o TransUnion </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'The current number of monthly accounts that are brought back to current status from delinquent status without the use of TransUnion solutions' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcNumberOfCures" >
+							<input type="number" name="" class="form-control" v-model.number="calcNumberOfCures" disabled>
 						</div>
 						<div class="form-group">
 							<label for="">$ of cures monthly w/o TransUnion </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'The dollar value of monthly cures without the use of TransUnion solutions' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcCostOfCures">
+							<input type="number" name="" class="form-control" v-model.number="calcCostOfCures" disabled>
 						</div>
 						<!-- <button class="btn">Calculate</button> -->
 					</form>
@@ -112,7 +112,7 @@
 						<div class="form-group">
 							<label for="">Current RPC% </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Current right party contact rate based on input in previous section' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="current_rpc" >
+							<input type="number" name="" class="form-control" v-model.number="current_rpc" disabled>
 						</div>
 						<div class="form-group">
 							<label for="">Average salary/rep </label>
@@ -121,22 +121,22 @@
 						</div>
 						<div class="form-group">
 							<label for="">Hours in work year </label>
-							<input type="number" name="" class="form-control" v-model.number="hrs_in_work_year">
+							<input type="number" name="" class="form-control" v-model.number="hrs_in_work_year" disabled>
 						</div>
 						<div class="form-group">
 							<label for="">Hourly cost/rep </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Total salaries divided by number of staff members on an hourly basis' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcHrlyCostPerRepYrly">
+							<input type="number" name="" class="form-control" v-model.number="calcHrlyCostPerRepYrly" disabled>
 						</div>
 						<div class="form-group currentRPC">
 							<label for="">Cost/call </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'Cost per call' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcCostPerCallDE">
+							<input type="number" name="" class="form-control" v-model.number="calcCostPerCallDE" disabled>
 						</div>
 						<div class="form-group currentPTP">
 							<label for="">Cost/RPC </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'Cost per right party contact' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcCostPerRPC">
+							<input type="number" name="" class="form-control" v-model.number="calcCostPerRPC" disabled>
 						</div>
 					</form>
 				</div> <!-- end left-block -->
