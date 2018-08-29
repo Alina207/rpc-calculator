@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app">
        <first-section></first-section>
   </div>
 </template>
