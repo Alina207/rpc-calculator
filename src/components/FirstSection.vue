@@ -609,7 +609,7 @@ label {
     padding: 8px 8px 10px 10px;
 	box-shadow: 3px 5px 5px rgba(black, .1);
 	text-align: left;
-	// font-family: Intro;
+	font-family: Intro, "Trebuchet MS", Helvetica, Arial, sans-serif;
   }
  
   .tooltip-arrow {
