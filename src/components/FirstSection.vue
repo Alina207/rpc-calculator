@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 header">
-				<h1>Calculate your Right Party Contact (RPC) Savings with TransUnion</h1>
+				<h1>Calculate your Right Party Contact (RPC) Savings by using TransUnion</h1>
 				<p>TransUnion's RPC calculator can help your organization estimate the financial benefit resulting from improved likelihood of contacting the correct debtor (right party) by using TransUnion phone data. The calculator displays the benefit in dollars your organization stands to gain in monthly cures, as well as the financial benefit stemming from improved department efficiency. </p>
 			</div>
 		</div>
@@ -411,7 +411,7 @@ export default {
     margin-bottom: 1.5em;
 
     h1 {
-        font-size: 4em;
+        font-size: 3em;
     }
 
     p {
@@ -455,7 +455,7 @@ export default {
 
     h2 {
         // font-family: IntroBold;
-        font-size: 4.5em;
+        font-size: 3.5em;
 		line-height: 1em;
 		font-weight: 700;
     }
@@ -530,7 +530,7 @@ label {
     margin-top: 0!important;
     text-align: center;
     color: #ffff;
-    font-size: 1.7em;
+    font-size: 1.5em;
 }
 
 .section-2 {
