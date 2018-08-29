@@ -49,7 +49,7 @@
 							<input type="number" name="" class="form-control" v-model.number="calcCostOfCures">
 						</div>
 						<!-- <button class="btn">Calculate</button> -->
-						</form>
+					</form>
 				</div> <!-- end left-block-->
 
 				<div class="col-md-6 right-block">
@@ -165,9 +165,9 @@
 					</table>
 					<div class="col-lg-12 bottom-right-block">
 						<h3>Monthly RPC Savings</h3>
-						<h2>{{calcTotalMonthlyCures | formatPrice}}</h2>
+						<h2>{{calcMonthlyRPCsavings | formatPrice}}</h2>
 						<h3>TLOxp new monthly RPC gained</h3>
-						<h2>{{ calcMonthlyRPCgained | formatNumber}}</h2>
+						<h2>{{calcMonthlyRPCgained | formatNumber}}</h2>
 					</div>
 				</div> <!-- end right-block-->
 			</div> <!-- end section 2 wrapper -->
@@ -195,7 +195,7 @@
 								</tr>
 								<tr>
 									<td>Current RPC%</td>
-									<td>{{current_rpc | toPercent}}</td>
+									<td>{{current_rpc | percent}}</td>
 								</tr>
 								<tr>
 									<td>Average salary/rep</td>
