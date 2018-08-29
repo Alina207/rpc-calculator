@@ -3,7 +3,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 header">
-				<h1>RPC Calculator</h1>
+				<h1>Calculate your Right Party Contact (RPC) Savings with TransUnion</h1>
 				<p>TransUnion's RPC calculator can help your organization estimate the financial benefit resulting from improved likelihood of contacting the correct debtor (right party) by using TransUnion phone data. The calculator displays the benefit in dollars your organization stands to gain in monthly cures, as well as the financial benefit stemming from improved department efficiency. </p>
 			</div>
 		</div>
