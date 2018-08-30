@@ -402,201 +402,214 @@ export default {
 
 #FirstSection {
 
-.container {
-	width: 60em;
+	.container {
+		width: 60em;
+	}
+
+	.header {
+		padding: 0;
+		margin-bottom: 1.5em;
+
+		h1 {
+			font-size: 3em;
+		}
+
+		p {
+			font-size: 1.3em;
+			line-height: 1.5em;
+		}
+		
+	}
+
+	.left-block {
+		border-right: 1px solid #A9A9A9;
+		padding: 0;
+		background: rgba(0,0,0,0.04);
+	}
+
+	.right-block {
+		padding-left: 0!important;
+		padding-right: 0!important;
+		padding-top: 4%;
+
+		h2 {
+			text-align: center;
+			// font-family: IntroBold;
+			font-size: 1.7em;
+			line-height: 2em;
+			
+		}
+	}
+
+	.bottom-right-block {
+		background-color: #fef3b2;
+		margin-top: 2em;
+		text-align: center;
+		padding: 2em 0 3em 0;
+
+		h3 {
+			font-size: 1.7em;
+			color: black;
+			line-height: 1.5em;
+		}
+
+		h2 {
+			// font-family: IntroBold;
+			font-size: 3.5em;
+			line-height: 1em;
+			font-weight: 700;
+		}
+	}
+
+	.wrapper {
+		border: 1px solid #A9A9A9;
+		padding: 0!important;
+	}
+
+	td:nth-child(even){
+		text-align: right;
+	}
+
+	.btn {
+		display: block;
+		background-color: #00A6CA;
+		color: #ffffff;
+		width: 100%;
+		font-size: 1.5em;
+		box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2);
+		text-transform: uppercase;
+	}
+
+	.currentRPC {
+		display: inline-block;
+		width: 50%;
+		padding-right: 2%;
+	}
+
+
+	.currentPTP {
+		display: inline-block;
+		width: 50%;
+		padding-left: 2%;
+	}
+
+	.table {
+		width: 88%;
+		margin-left: 6%;
+		font-size: 1.1em;
+		font-weight: bold;
+	}
+
+	.table>tbody>tr>td, 
+	.table>tbody>tr>th, 
+	.table>tfoot>tr>td, 
+	.table>tfoot>tr>th, 
+	.table>thead>tr>td, 
+	.table>thead>tr>th {
+		border-top: none!important;
+		border-bottom: 1px solid #ddd;
+	}
+
+	form {
+		padding: 0% 5% 5% 5%;
+	}
+
+	.form-group {
+		margin-top: 2em;
+
+		input[disabled="disabled"], select[disabled="disabled"], .form-control[disabled], fieldset[disabled] {
+			border: 1px solid rgba(0, 0, 0, 0.131);
+			font-weight: normal;
+			background-color: #eee;
+			cursor: default;
+		}
+
+	}
+
+
+	label {
+		font-size: 1.2em;
+		float: left;
+		padding-bottom: .7em;
+	}
+
+
+
+	.sectionTitle {
+		background-color:#00A6CA;
+		padding: 2.7%;
+		margin-top: 0!important;
+		text-align: center;
+		color: #ffff;
+		font-size: 1.5em;
+	}
+
+	.section-2 {
+		margin-top: 2em;
+
+	}
+
+	.section-2 .bottom-right-block {
+		padding: 4em 0 9em 0;
+	}
+
+	.fa {
+		// font-family: tu-fontawesome;
+		// font-size: 1.3em;
+		float: right;
+		color: #A9A9A9;
+		padding-right: .3em;
+	}
+
+	.fa-info-circle:before, .tufa-info-circle:before {
+		content: "\f05a";
+	}
+
+	.blue {
+		color: #00A6CA;
+	}
+
+	.summary {
+		border: 1px solid #A9A9A9;
+		margin-top: 1.5em;
+		padding-bottom: 2em;
+
+		h2 {
+			text-align: center;
+			// font-family: IntroBold;
+			font-size: 1.7em;
+			line-height: 1.5em;
+			padding-bottom: .5em;
+		}
+
+		h3 {
+			font-size: 1.7em;
+			color: black;
+			line-height: 1.5em;
+			text-align: center;
+			padding-top: 1em;
+		}
+
+		.totalFTE {
+			// font-family: IntroBold;
+			font-size: 4.5em;
+			line-height: 1em;
+		}
+	}
+
+	.left-sum {
+		border-right: 1px solid #A9A9A9;
+	}
+
+	.rpc-footer {
+		font-size: .8em;
+		color: #777;
+		margin: 2em 0 2em -1em;
+	}
 }
 
-.header {
-    padding: 0;
-    margin-bottom: 1.5em;
-
-    h1 {
-        font-size: 3em;
-    }
-
-    p {
-        font-size: 1.3em;
-        line-height: 1.5em;
-    }
-    
-}
-
-.left-block {
-    border-right: 1px solid #A9A9A9;
-    padding: 0;
-    background: rgba(0,0,0,0.04);
-  }
-
-.right-block {
-    padding-left: 0!important;
-    padding-right: 0!important;
-    padding-top: 4%;
-
-    h2 {
-        text-align: center;
-        // font-family: IntroBold;
-        font-size: 1.7em;
-        line-height: 2em;
-        
-    }
-}
-
-.bottom-right-block {
-    background-color: #fef3b2;
-    margin-top: 2em;
-    text-align: center;
-	padding: 2em 0 3em 0;
-
-    h3 {
-        font-size: 1.7em;
-        color: black;
-        line-height: 1.5em;
-    }
-
-    h2 {
-        // font-family: IntroBold;
-        font-size: 3.5em;
-		line-height: 1em;
-		font-weight: 700;
-    }
-}
-
-.wrapper {
-    border: 1px solid #A9A9A9;
-    padding: 0!important;
-}
-
-td:nth-child(even){
-    text-align: right;
-}
-
-.btn {
-    display: block;
-    background-color: #00A6CA;
-    color: #ffffff;
-    width: 100%;
-    font-size: 1.5em;
-    box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.2);
-    text-transform: uppercase;
-}
-
-.currentRPC {
-    display: inline-block;
-    width: 50%;
-    padding-right: 2%;
-}
-
-
-.currentPTP {
-    display: inline-block;
-    width: 50%;
-    padding-left: 2%;
-}
-
-.table {
-    width: 88%;
-    margin-left: 6%;
-    font-size: 1.1em;
-    font-weight: bold;
-}
-
-.table>tbody>tr>td, 
-.table>tbody>tr>th, 
-.table>tfoot>tr>td, 
-.table>tfoot>tr>th, 
-.table>thead>tr>td, 
-.table>thead>tr>th {
-    border-top: none!important;
-    border-bottom: 1px solid #ddd;
-}
-
-form {
-    padding: 0% 5% 5% 5%;
-}
-
-.form-group {
-	margin-top: 2em;
-}
-
-label {
-    font-size: 1.2em;
-	float: left;
-    padding-bottom: .7em;
-}
-
-.sectionTitle {
-    background-color:#00A6CA;
-    padding: 2.7%;
-    margin-top: 0!important;
-    text-align: center;
-    color: #ffff;
-    font-size: 1.5em;
-}
-
-.section-2 {
-    margin-top: 2em;
-
-}
-
-.section-2 .bottom-right-block {
-	padding: 4em 0 9em 0;
-}
-
-.fa {
-    // font-family: tu-fontawesome;
-	// font-size: 1.3em;
-	float: right;
-	color: #A9A9A9;
-	padding-right: .3em;
-}
-
-.fa-info-circle:before, .tufa-info-circle:before {
-    content: "\f05a";
-}
-
-.blue {
-    color: #00A6CA;
-}
-
-.summary {
-    border: 1px solid #A9A9A9;
-    margin-top: 1.5em;
-	padding-bottom: 2em;
-
-    h2 {
-        text-align: center;
-        // font-family: IntroBold;
-        font-size: 1.7em;
-        line-height: 1.5em;
-        padding-bottom: .5em;
-    }
-
-    h3 {
-        font-size: 1.7em;
-        color: black;
-        line-height: 1.5em;
-        text-align: center;
-        padding-top: 1em;
-    }
-
-    .totalFTE {
-        // font-family: IntroBold;
-        font-size: 4.5em;
-        line-height: 1em;
-    }
-}
-
-.left-sum {
-    border-right: 1px solid #A9A9A9;
-}
-
-.rpc-footer {
-	font-size: 1em;
-    color: #A9A9A9;
-    margin: 2em 0 2em 2em;
-}
-}
-
+////////// Tool-tips ///////////
+// keep outside of #FirstSection
 
 .tooltip {
   display: block !important;
