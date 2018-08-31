@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-md-12 wrapper">
 				<div class="col-md-6 left-block">
-					<h3 class="sectionTitle">Benefit to Delinquency/Chargeoffs</h3>
+					<h3 class="sectionTitle">Benefit to Delinquency/Charge-offs</h3>
 					<form role="form">                     
 						<div class="form-group">
 							<label for="">Monthly # of accounts > 30 DQ</label>
@@ -60,30 +60,30 @@
 							<tbody>
 								<tr>
 									<td>TLOxp RPC % Increase</td>
-									<td>{{rpc_increase | percent}}</td>
+									<td>{{rpc_increase }}%</td>
 								</tr>
 								<tr>
-									<td>RPC % with TLOxp</td>
-									<td>{{calcRPCwithTLOxp | percent}}</td>
+									<td>New RPC rate with TLOxp</td>
+									<td>{{calcRPCwithTLOxp.toFixed(0) }}%</td>
 								</tr>
 								<tr>
-									<td>PTP %</td>
-									<td>{{current_ptp | percent}}</td>
+									<td>PTP</td>
+									<td>{{current_ptp }}%</td>
 								</tr>
 								<tr>
-									<td>Cures w/ TLOxp</td>
-									<td>{{calcNumberCuresWithTLOxp | formatNumber}}</td>
+									<td># of Cures w/ TLOxp</td>
+									<td>{{calcNumberCuresWithTLOxp.toFixed(0) }}</td>
 								</tr>
 								<tr>
-									<td>Cures w/ TLOxp</td>
-									<td>{{calcCostCuresWithTLOxp | formatPrice }}</td>
+									<td>Cost of Cures w/ TLOxp</td>
+									<td>${{calcCostCuresWithTLOxp.toFixed(0) }}</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 					<div class="col-lg-12 bottom-right-block">
 						<h3>Monthly Cures<br>due to TransUnion:</h3>
-						<h2>{{calcTotalMonthlyCures | formatPrice}}</h2>
+						<h2>${{calcTotalMonthlyCures.toFixed(0) }}</h2>
 					</div>
 				</div> <!-- end right-block -->
 			</div> <!-- end section 1 wrapper -->
@@ -148,27 +148,27 @@
 						<tbody>
 							<tr>
 								<td>TLOxp RPC % Increase</td>
-								<td>{{rpc_increase | percent}}</td>
+								<td>{{rpc_increase }}%</td>
 							</tr>
 							<tr>
 								<td>New RPC rate with TLOxp</td>
-								<td>{{calcRPCwithTLOxp | percent}}</td>
+								<td>{{calcRPCwithTLOxp.toFixed(0) }}%</td>
 							</tr>
 							<tr>
 								<td>TLOxp cost/RPC</td>
-								<td>{{calcTLOxpCostPerRPC | formatPrice}}</td>
+								<td>${{calcTLOxpCostPerRPC.toFixed(2) }}</td>
 							</tr>
 							<tr>
 								<td>Savings in cost/RPC</td>
-								<td>{{calcCostSavings | formatPrice}}</td>
+								<td>${{calcCostSavings.toFixed(2) }}</td>
 							</tr>
 						</tbody>
 					</table>
 					<div class="col-lg-12 bottom-right-block">
 						<h3>Monthly RPC Savings</h3>
-						<h2>{{calcMonthlyRPCsavings | formatPrice}}</h2>
+						<h2>${{calcMonthlyRPCsavings.toFixed(0) }}</h2>
 						<h3>TLOxp new monthly RPC gained</h3>
-						<h2>{{calcMonthlyRPCgained | formatNumber}}</h2>
+						<h2>{{calcMonthlyRPCgained.toFixed(0) }}</h2>
 					</div>
 				</div> <!-- end right-block-->
 			</div> <!-- end section 2 wrapper -->
@@ -184,39 +184,39 @@
 							<tbody>
 								<tr>
 									<td>Number of reps</td>
-									<td>{{number_of_reps | formatNumber}}</td>
+									<td>{{number_of_reps }}</td>
 								</tr>
 								<tr>
 									<td>Average calls/hr</td>
-									<td>{{avg_calls | formatNumber}}</td>
+									<td>{{avg_calls }}</td>
 								</tr>
 								<tr>
 									<td>Average min/call</td>
-									<td>{{calcAvgMinutes | formatNumber}}</td>
+									<td>{{calcAvgMinutes.toFixed(0) }}</td>
 								</tr>
 								<tr>
 									<td>Current RPC%</td>
-									<td>{{current_rpc | percent}}</td>
+									<td>{{current_rpc }}%</td>
 								</tr>
 								<tr>
 									<td>Average salary/rep</td>
-									<td>{{avg_salary_per_rep | formatPrice}}</td>
+									<td>${{avg_salary_per_rep }}</td>
 								</tr>
 								<tr>
 									<td>Hours in month</td>
-									<td>{{hrs_in_work_month | formatNumber}}</td>
+									<td>{{hrs_in_work_month }}</td>
 								</tr>
 								<tr>
 									<td>Hourly cost/rep</td>
-									<td>{{calcHrlyCostPerRepMonthly | formatPrice}}</td>
+									<td>${{calcHrlyCostPerRepMonthly.toFixed(2) }}</td>
 								</tr>
 								<tr>
 									<td>Cost/call</td>
-									<td>{{calcCostPerCallFTE | formatPrice}}</td>
+									<td>${{calcCostPerCallFTE.toFixed(2) }}</td>
 								</tr>
 								<tr>
-									<td>Non-RPC call mins/hours</td>
-									<td>{{calcNonRPCcallsTLOxp | formatNumber}}</td>
+									<td>Non-RPC calls mins/hours</td>
+									<td>{{calcNonRPCcalls.toFixed(0) }}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -225,25 +225,33 @@
 						<table class="table">
 							<tbody>
 								<tr>
+									<td>TLOxp RPC % Increase</td>
+									<td>{{rpc_increase }}%</td>
+								</tr>
+								<tr>
+									<td>New RPC rate with TLOxp</td>
+									<td>{{calcRPCwithTLOxp.toFixed(0) }}%</td>
+								</tr>
+								<tr>
 									<td>TLOxp non-RPC calls mins/hour</td>
-									<td>{{calcNonRPCcallsTLOxp | formatNumber}}</td>
+									<td>{{calcNonRPCcallsTLOxp.toFixed(0) }}</td>
 								</tr>
 								<tr>
 									<td>Average calls/hr</td>
-									<td>{{calcTimeSavingsPerRep | formatNumber}}</td>
+									<td>{{calcTimeSavingsPerRep.toFixed(0) }}</td>
 								</tr>
 								<tr>
 									<td>Time savings increasing RPC/hour/team</td>
-									<td>{{calcTimeSavingsPerTeam | formatPrice}}</td>
+									<td>{{calcTimeSavingsPerTeam.toFixed(0) }}</td>
 								</tr>
 								<tr>
 									<td>Time savings increasing RPC/hour/team/month</td>
-									<td>{{calcTimeSavingsPerMonth | formatPrice}}</td>
+									<td>{{calcTimeSavingsPerMonth.toFixed(0) }}</td>
 								</tr>
 							</tbody>
 						</table>
 						<h3>FTE savings/year:</h3>
-						<h2 class="totalFTE">{{calcFTEsavingsPerYr | formatNumber}}</h2>
+						<h2 class="totalFTE">{{calcFTEsavingsPerYr.toFixed(0) }}</h2>
 					</div> <!-- end right sum -->
 				</div> <!-- end summary row -->
 			</div> <!-- end summary wrapper -->
@@ -275,37 +283,13 @@ export default {
             hrs_in_work_month: '160',
         }
 	},
-	filters: {
-		formatNumber: function(val) {
-			return val.toLocaleString('en-US', { maximumFractionDigits: 0 });
-		},
-		formatPrice: function(val) {
-			return '$' + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-			},
-		percent (val) {
-			return val.toLocaleString('en-US', { maximumFractionDigits: 0 }) + '%';
-		}
-	},
-	methods: {
-		toPercent: function(val) {
-			return val * 0.01;
-		},
-		toCurrency: function (val) {
-			var input = val.replace(/[\D\s._-]+/g, "");
-				input = input ? parseInt( input, 10 ) : 0;
-
-				this.val( function() {
-					return ( input === 0 ) ? "" : input.toLocaleString( "en-US" );
-				} );
-		} 
-	},
     computed: {
-        calcTotalDQ: function(){
+		calcTotalDQ: function(){
 			var totalDQ = (this.number_of_accounts * this.avg_balance);
 			return totalDQ;
 		},
 		calcNumberOfCures: function (){
-			var numberOfCures = ( (this.number_of_accounts * this.toPercent(this.current_rpc)) * this.toPercent(this.current_ptp) );
+			var numberOfCures = ( (this.number_of_accounts * (this.current_rpc * .01)) * (this.current_ptp * .01) );
 			return numberOfCures;
 		}, 
 		calcCostOfCures: function (){
@@ -313,8 +297,8 @@ export default {
 			return costOfCures; 
 		},
 		calcRPCwithTLOxp: function (){
-			var RPCwithTLOxp = ( (this.toPercent(this.rpc_increase) + 1) * this.current_rpc ); 
-			return RPCwithTLOxp; 
+			var RPCwithTLOxp = ( ( (this.rpc_increase * .01) + 1.0) * (this.current_rpc * .01) * 100 ); 
+			return RPCwithTLOxp;
 		},
 		calcNumberCuresWithTLOxp: function (){
 			var totalNumberCures = ( (this.number_of_accounts * this.calcRPCwithTLOxp) * (this.current_ptp * .0001) );
@@ -342,19 +326,19 @@ export default {
 			return costPerCallDE;
 		},
 		calcCostPerRPC: function () {
-			var costPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.current_rpc) ) );
+			var costPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.current_rpc * .01) ) );
 			return costPerRPC;
 		},
 		calcTLOxpCostPerRPC: function () {
-			var TLOxpCostPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.calcRPCwithTLOxp) ) );
-			return TLOxpCostPerRPC;
+			var TLOxpCostPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.calcRPCwithTLOxp * .01) ) );
+			return TLOxpCostPerRPC; 
 		},
 		calcCostSavings: function () {
 			var costSavings= (this.calcCostPerRPC - this.calcTLOxpCostPerRPC);
 			return costSavings;
 		},
 		calcMonthlyRPCsavings: function () {
-			var monthlyRPCsavings = ( ( (160 * this.number_of_reps * this.avg_calls) * this.current_rpc) * this.calcCostSavings  );
+			var monthlyRPCsavings = ( ( (160 * this.number_of_reps * this.avg_calls) * (this.current_rpc * .01)) * this.calcCostSavings  );
 			return monthlyRPCsavings;
 		},
 		calcMonthlyRPCgained: function () {
@@ -371,15 +355,15 @@ export default {
 			return costPerCallFTE;
 		},
 		calcNonRPCcalls: function () {
-			var nonRPCcalls = ( 60 - ( ( this.toPercent(this.current_rpc) * this.avg_calls) * this.calcAvgMinutes) ) ;
+			var nonRPCcalls = ( 60 - ( ((this.current_rpc * .01) * this.avg_calls) * this.calcAvgMinutes) ) ;
 			return nonRPCcalls;
 		},
 		calcNonRPCcallsTLOxp: function () {
-			var nonRPCcallsTLOxp = ( 60 - ( ( this.toPercent(this.calcRPCwithTLOxp) * this.avg_calls) * this.calcAvgMinutes) );
+			var nonRPCcallsTLOxp = ( 60 - ( ( (this.calcRPCwithTLOxp * .01) * this.avg_calls) * this.calcAvgMinutes) );
 			return nonRPCcallsTLOxp;
 		},
 		calcTimeSavingsPerRep: function () {
-			var timeSavingsPerRep = (this.calcNonRPCcalls - this.calcNonRPCcallsTLOxp);
+			var timeSavingsPerRep = (this.calcNonRPCcalls - this.calcNonRPCcallsTLOxp );
 			return timeSavingsPerRep;
 		},
 		calcTimeSavingsPerTeam: function () {
