@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "v-tooltip": "^2.0.0-rc.33",
-    "vue": "^2.5.17"
+    "vue": "^2.5.17",
+    "vue-filter-number-format": "^1.0.3",
+    "vue-numeric": "^2.3.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.1",

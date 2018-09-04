@@ -17,37 +17,37 @@
 						<div class="form-group">
 							<label for="">Monthly # of accounts > 30 DQ</label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Number of accounts 30 days or greater in delinquent status' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="number_of_accounts"/>
+							<vue-numeric class="form-control" :empty-value="0" v-model.number="number_of_accounts"/></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average balance</label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average balance of delinquent accounts 30 days or greater past due' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="avg_balance"/> 
+							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="avg_balance"/></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Total DQ portfolio balance </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Total delinquent portfolio balance' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcTotalDQ" disabled/> 
+							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcTotalDQ" disabled/></vue-numeric>
 						</div>
 						<div class="form-group currentRPC">
 							<label for="">Current RPC% </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'The number of successful efforts divided by the total number of contact efforts' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="current_rpc">
+							<vue-numeric class="form-control" :empty-value="12" v-model.number="current_rpc"></vue-numeric>
 						</div>
 						<div class="form-group currentPTP">
 							<label for="">Current PTP% </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'The percent of delinquent accounts that have an agreement such as a promissory note in place' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="current_ptp" >
+							<vue-numeric class="form-control" :empty-value="80" v-model.number="current_ptp" ></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for=""># of cures monthly w/o TransUnion </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'The current number of monthly accounts that are brought back to current status from delinquent status without the use of TransUnion solutions' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcNumberOfCures" disabled>
+							<vue-numeric class="form-control" :empty-value="0" v-model.number="calcNumberOfCures" disabled></vue-numeric>
 						</div>
 						<div class="form-group">
-							<label for="">$ of cures monthly w/o TransUnion </label>
+							<label for="">Cost of cures monthly w/o TransUnion </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'The dollar value of monthly cures without the use of TransUnion solutions' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcCostOfCures" disabled>
+							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcCostOfCures" disabled></vue-numeric>
 						</div>
 						<!-- <button class="btn">Calculate</button> -->
 					</form>
@@ -72,18 +72,18 @@
 								</tr>
 								<tr>
 									<td># of Cures w/ TLOxp</td>
-									<td>{{calcNumberCuresWithTLOxp.toFixed(0) }}</td>
+									<td>{{calcNumberCuresWithTLOxp.toFixed(0) | numFormat }}</td>
 								</tr>
 								<tr>
 									<td>Cost of Cures w/ TLOxp</td>
-									<td>${{calcCostCuresWithTLOxp.toFixed(0) }}</td>
+									<td>${{calcCostCuresWithTLOxp.toFixed(0) | numFormat}}</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 					<div class="col-lg-12 bottom-right-block">
 						<h3>Monthly Cures<br>due to TransUnion:</h3>
-						<h2>${{calcTotalMonthlyCures.toFixed(0) }}</h2>
+						<h2>${{calcTotalMonthlyCures.toFixed(0) | numFormat }}</h2>
 					</div>
 				</div> <!-- end right-block -->
 			</div> <!-- end section 1 wrapper -->
@@ -98,46 +98,46 @@
 						<div class="form-group">
 							<label for="">Number of reps </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Number of collections department staff members' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="number_of_reps"/>
+							<vue-numeric class="form-control" :empty-value="0" v-model.number="number_of_reps"/></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average calls/hr </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average number of calls per hour by the entire collections department staff' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="avg_calls"/> 
+							<vue-numeric class="form-control" :empty-value="0" v-model.number="avg_calls"/></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average min/call </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average number of calls per hour by the entire collections department staff' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcAvgMinutes"/> 
+							<vue-numeric class="form-control" :empty-value="0" v-model.number="calcAvgMinutes"/></vue-numeric> 
 						</div>
 						<div class="form-group">
 							<label for="">Current RPC% </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Current right party contact rate based on input in previous section' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="current_rpc" disabled>
+							<vue-numeric class="form-control" :empty-value="0" v-model.number="current_rpc" disabled></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average salary/rep </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average annual salary per staff member' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="avg_salary_per_rep">
+							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="avg_salary_per_rep"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Hours in work year </label>
-							<input type="number" name="" class="form-control" v-model.number="hrs_in_work_year" disabled>
+							<vue-numeric class="form-control" :empty-value="0" v-model.number="hrs_in_work_year" disabled></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Hourly cost/rep </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Total salaries divided by number of staff members on an hourly basis' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcHrlyCostPerRepYrly" disabled>
+							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcHrlyCostPerRepYrly" disabled></vue-numeric>
 						</div>
 						<div class="form-group currentRPC">
 							<label for="">Cost/call </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'Cost per call' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcCostPerCallDE" disabled>
+							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcCostPerCallDE" disabled></vue-numeric>
 						</div>
 						<div class="form-group currentPTP">
 							<label for="">Cost/RPC </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'Cost per right party contact' }"></span>
-							<input type="number" name="" class="form-control" v-model.number="calcCostPerRPC" disabled>
+							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcCostPerRPC" disabled></vue-numeric>
 						</div>
 					</form>
 				</div> <!-- end left-block -->
@@ -156,19 +156,19 @@
 							</tr>
 							<tr>
 								<td>TLOxp cost/RPC</td>
-								<td>${{calcTLOxpCostPerRPC.toFixed(2) }}</td>
+								<td>${{calcTLOxpCostPerRPC.toFixed(2) | numFormat }}</td>
 							</tr>
 							<tr>
 								<td>Savings in cost/RPC</td>
-								<td>${{calcCostSavings.toFixed(2) }}</td>
+								<td>${{calcCostSavings.toFixed(2) | numFormat }}</td>
 							</tr>
 						</tbody>
 					</table>
 					<div class="col-lg-12 bottom-right-block">
 						<h3>Monthly RPC Savings</h3>
-						<h2>${{calcMonthlyRPCsavings.toFixed(0) }}</h2>
+						<h2>${{calcMonthlyRPCsavings.toFixed(0) | numFormat }}</h2>
 						<h3>TLOxp new monthly RPC gained</h3>
-						<h2>{{calcMonthlyRPCgained.toFixed(0) }}</h2>
+						<h2>{{calcMonthlyRPCgained.toFixed(0) | numFormat }}</h2>
 					</div>
 				</div> <!-- end right-block-->
 			</div> <!-- end section 2 wrapper -->
@@ -184,15 +184,15 @@
 							<tbody>
 								<tr>
 									<td>Number of reps</td>
-									<td>{{number_of_reps }}</td>
+									<td>{{number_of_reps | numFormat }}</td>
 								</tr>
 								<tr>
 									<td>Average calls/hr</td>
-									<td>{{avg_calls }}</td>
+									<td>{{avg_calls  | numFormat}}</td>
 								</tr>
 								<tr>
 									<td>Average min/call</td>
-									<td>{{calcAvgMinutes.toFixed(0) }}</td>
+									<td>{{calcAvgMinutes.toFixed(0) | numFormat }}</td>
 								</tr>
 								<tr>
 									<td>Current RPC%</td>
@@ -200,23 +200,23 @@
 								</tr>
 								<tr>
 									<td>Average salary/rep</td>
-									<td>${{avg_salary_per_rep }}</td>
+									<td>${{avg_salary_per_rep | numFormat }}</td>
 								</tr>
 								<tr>
 									<td>Hours in month</td>
-									<td>{{hrs_in_work_month }}</td>
+									<td>{{hrs_in_work_month  | numFormat}}</td>
 								</tr>
 								<tr>
 									<td>Hourly cost/rep</td>
-									<td>${{calcHrlyCostPerRepMonthly.toFixed(2) }}</td>
+									<td>${{calcHrlyCostPerRepMonthly.toFixed(2) | numFormat }}</td>
 								</tr>
 								<tr>
 									<td>Cost/call</td>
-									<td>${{calcCostPerCallFTE.toFixed(2) }}</td>
+									<td>${{calcCostPerCallFTE.toFixed(2) | numFormat }}</td>
 								</tr>
 								<tr>
 									<td>Non-RPC calls mins/hours</td>
-									<td>{{calcNonRPCcalls.toFixed(0) }}</td>
+									<td>{{calcNonRPCcalls.toFixed(0) | numFormat }}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -234,19 +234,19 @@
 								</tr>
 								<tr>
 									<td>TLOxp non-RPC calls mins/hour</td>
-									<td>{{calcNonRPCcallsTLOxp.toFixed(0) }}</td>
+									<td>{{calcNonRPCcallsTLOxp.toFixed(0) | numFormat }}</td>
 								</tr>
 								<tr>
 									<td>Average calls/hr</td>
-									<td>{{calcTimeSavingsPerRep.toFixed(0) }}</td>
+									<td>{{calcTimeSavingsPerRep.toFixed(0) | numFormat }}</td>
 								</tr>
 								<tr>
 									<td>Time savings increasing RPC/hour/team</td>
-									<td>{{calcTimeSavingsPerTeam.toFixed(0) }}</td>
+									<td>{{calcTimeSavingsPerTeam.toFixed(0) | numFormat }}</td>
 								</tr>
 								<tr>
 									<td>Time savings increasing RPC/hour/team/month</td>
-									<td>{{calcTimeSavingsPerMonth.toFixed(0) }}</td>
+									<td>{{calcTimeSavingsPerMonth.toFixed(0) | numFormat }}</td>
 								</tr>
 							</tbody>
 						</table>
