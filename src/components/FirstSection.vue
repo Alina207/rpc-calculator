@@ -17,17 +17,17 @@
 						<div class="form-group">
 							<label for="">Monthly # of accounts > 30 DQ</label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Number of accounts 30 days or greater in delinquent status' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" v-model.number="number_of_accounts"/></vue-numeric>
+							<vue-numeric class="form-control" v-model.number="number_of_accounts"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average balance</label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average balance of delinquent accounts 30 days or greater past due' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="avg_balance"/></vue-numeric>
+							<vue-numeric class="form-control" currency="$" v-model.number="avg_balance"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Total DQ portfolio balance </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Total delinquent portfolio balance' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcTotalDQ" disabled/></vue-numeric>
+							<vue-numeric class="form-control" currency="$" v-model.number="calcTotalDQ" disabled></vue-numeric>
 						</div>
 						<div class="form-group currentRPC">
 							<label for="">Current RPC% </label>
@@ -42,12 +42,12 @@
 						<div class="form-group">
 							<label for=""># of cures monthly w/o TransUnion </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'The current number of monthly accounts that are brought back to current status from delinquent status without the use of TransUnion solutions' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" v-model.number="calcNumberOfCures" disabled></vue-numeric>
+							<vue-numeric class="form-control" v-model.number="calcNumberOfCures" disabled></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Cost of cures monthly w/o TransUnion </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'The dollar value of monthly cures without the use of TransUnion solutions' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcCostOfCures" disabled></vue-numeric>
+							<vue-numeric class="form-control" currency="$" v-model.number="calcCostOfCures" disabled></vue-numeric>
 						</div>
 						<!-- <button class="btn">Calculate</button> -->
 					</form>
@@ -98,46 +98,46 @@
 						<div class="form-group">
 							<label for="">Number of reps </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Number of collections department staff members' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" v-model.number="number_of_reps"/></vue-numeric>
+							<vue-numeric class="form-control" v-model.number="number_of_reps"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average calls/hr </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average number of calls per hour by the entire collections department staff' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" v-model.number="avg_calls"/></vue-numeric>
+							<vue-numeric class="form-control" v-model.number="avg_calls"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average min/call </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average number of calls per hour by the entire collections department staff' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" v-model.number="calcAvgMinutes"/></vue-numeric> 
+							<vue-numeric class="form-control" v-model.number="calcAvgMinutes" disabled></vue-numeric> 
 						</div>
 						<div class="form-group">
 							<label for="">Current RPC% </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Current right party contact rate based on input in previous section' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" v-model.number="current_rpc" disabled></vue-numeric>
+							<vue-numeric class="form-control" v-model.number="current_rpc" disabled></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average salary/rep </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average annual salary per staff member' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="avg_salary_per_rep"></vue-numeric>
+							<vue-numeric class="form-control" currency="$" v-model.number="avg_salary_per_rep"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Hours in work year </label>
-							<vue-numeric class="form-control" :empty-value="0" v-model.number="hrs_in_work_year" disabled></vue-numeric>
+							<vue-numeric class="form-control" v-model.number="hrs_in_work_year" disabled></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Hourly cost/rep </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Total salaries divided by number of staff members on an hourly basis' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcHrlyCostPerRepYrly" disabled></vue-numeric>
+							<vue-numeric class="form-control" currency="$" v-model.number="calcHrlyCostPerRepYrly" disabled></vue-numeric>
 						</div>
 						<div class="form-group currentRPC">
 							<label for="">Cost/call </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'Cost per call' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcCostPerCallDE" disabled></vue-numeric>
+							<vue-numeric class="form-control" currency="$" v-model.number="calcCostPerCallDE" disabled></vue-numeric>
 						</div>
 						<div class="form-group currentPTP">
 							<label for="">Cost/RPC </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'Cost per right party contact' }"></span>
-							<vue-numeric class="form-control" :empty-value="0" currency="$" v-model.number="calcCostPerRPC" disabled></vue-numeric>
+							<vue-numeric class="form-control" currency="$" v-model.number="calcCostPerRPC" disabled></vue-numeric>
 						</div>
 					</form>
 				</div> <!-- end left-block -->
