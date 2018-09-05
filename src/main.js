@@ -2,20 +2,24 @@ import Vue from 'vue'
 import App from './App.vue'
 import VTooltip from 'v-tooltip'
 import VueNumeric from 'vue-numeric'
-import numFormat from 'vue-filter-number-format'
+import VeeValidate from 'vee-validate'
  
 Vue.use(VTooltip)
 Vue.use(VueNumeric)
+Vue.use(VeeValidate)
 
 // import "@/scss/_globals.scss";
 
 
 Vue.config.productionTip = false
 
+
+
+
 new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-Vue.filter('numFormat', numFormat);
+
 
 

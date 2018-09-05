@@ -59,31 +59,31 @@
 						<table class="table">
 							<tbody>
 								<tr>
-									<td>TLOxp RPC % Increase</td>
-									<td>{{rpc_increase }}%</td>
+									<td>TU RPC % Increase</td>
+									<td>{{rpc_increase | formatPercent }}</td>
 								</tr>
 								<tr>
-									<td>New RPC rate with TLOxp</td>
-									<td>{{calcRPCwithTLOxp.toFixed(0) }}%</td>
+									<td>New RPC rate with TU</td>
+									<td>{{calcRPCwithTU | formatPercent }}</td>
 								</tr>
 								<tr>
 									<td>PTP</td>
-									<td>{{current_ptp }}%</td>
+									<td>{{current_ptp | formatPercent }}</td>
 								</tr>
 								<tr>
-									<td># of Cures w/ TLOxp</td>
-									<td>{{calcNumberCuresWithTLOxp.toFixed(0) | numFormat }}</td>
+									<td># of Cures w/ TU</td>
+									<td>{{calcNumberCuresWithTU | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
-									<td>Cost of Cures w/ TLOxp</td>
-									<td>${{calcCostCuresWithTLOxp.toFixed(0) | numFormat}}</td>
+									<td>Cost of Cures w/ TU</td>
+									<td>{{calcCostCuresWithTU | commaSeparateCurrency }}</td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 					<div class="col-lg-12 bottom-right-block">
 						<h3>Monthly Cures<br>due to TransUnion:</h3>
-						<h2>${{calcTotalMonthlyCures.toFixed(0) | numFormat }}</h2>
+						<h2>{{calcTotalMonthlyCures | commaSeparateCurrency }}</h2>
 					</div>
 				</div> <!-- end right-block -->
 			</div> <!-- end section 1 wrapper -->
@@ -147,28 +147,28 @@
 					<table class="table">
 						<tbody>
 							<tr>
-								<td>TLOxp RPC % Increase</td>
-								<td>{{rpc_increase }}%</td>
+								<td>TU RPC % Increase</td>
+								<td>{{rpc_increase | formatPercent }}</td>
 							</tr>
 							<tr>
-								<td>New RPC rate with TLOxp</td>
-								<td>{{calcRPCwithTLOxp.toFixed(0) }}%</td>
+								<td>New RPC rate with TU</td>
+								<td>{{calcRPCwithTU | formatPercent }}</td>
 							</tr>
 							<tr>
-								<td>TLOxp cost/RPC</td>
-								<td>${{calcTLOxpCostPerRPC.toFixed(2) | numFormat }}</td>
+								<td>TU cost/RPC</td>
+								<td>{{calcTUCostPerRPC | formatCost }}</td>
 							</tr>
 							<tr>
 								<td>Savings in cost/RPC</td>
-								<td>${{calcCostSavings.toFixed(2) | numFormat }}</td>
+								<td>{{calcCostSavings | formatCost }}</td>
 							</tr>
 						</tbody>
 					</table>
 					<div class="col-lg-12 bottom-right-block">
 						<h3>Monthly RPC Savings</h3>
-						<h2>${{calcMonthlyRPCsavings.toFixed(0) | numFormat }}</h2>
-						<h3>TLOxp new monthly RPC gained</h3>
-						<h2>{{calcMonthlyRPCgained.toFixed(0) | numFormat }}</h2>
+						<h2>{{calcMonthlyRPCsavings | commaSeparateCurrency }}</h2>
+						<h3>TU new monthly RPC gained</h3>
+						<h2>{{calcMonthlyRPCgained | commaSeparateNumber }}</h2>
 					</div>
 				</div> <!-- end right-block-->
 			</div> <!-- end section 2 wrapper -->
@@ -184,39 +184,40 @@
 							<tbody>
 								<tr>
 									<td>Number of reps</td>
-									<td>{{number_of_reps | numFormat }}</td>
+									<td>{{number_of_reps | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
 									<td>Average calls/hr</td>
-									<td>{{avg_calls  | numFormat}}</td>
+									<td>{{avg_calls | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
 									<td>Average min/call</td>
-									<td>{{calcAvgMinutes.toFixed(0) | numFormat }}</td>
+									<td>{{calcAvgMinutes | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
 									<td>Current RPC%</td>
-									<td>{{current_rpc }}%</td>
+									<td>{{current_rpc | formatPercent }}</td>
 								</tr>
 								<tr>
 									<td>Average salary/rep</td>
-									<td>${{avg_salary_per_rep | numFormat }}</td>
+									<td>${{avg_salary_per_rep | commaSeparateNumber }}</td>
+									<!-- breaks if commaSeparateCurrency is used -->
 								</tr>
 								<tr>
 									<td>Hours in month</td>
-									<td>{{hrs_in_work_month  | numFormat}}</td>
+									<td>{{hrs_in_work_month | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
 									<td>Hourly cost/rep</td>
-									<td>${{calcHrlyCostPerRepMonthly.toFixed(2) | numFormat }}</td>
+									<td>{{calcHrlyCostPerRepMonthly | formatCost }}</td>
 								</tr>
 								<tr>
 									<td>Cost/call</td>
-									<td>${{calcCostPerCallFTE.toFixed(2) | numFormat }}</td>
+									<td>{{calcCostPerCallFTE | formatCost }}</td>
 								</tr>
 								<tr>
 									<td>Non-RPC calls mins/hours</td>
-									<td>{{calcNonRPCcalls.toFixed(0) | numFormat }}</td>
+									<td>{{calcNonRPCcalls | commaSeparateNumber }}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -225,33 +226,33 @@
 						<table class="table">
 							<tbody>
 								<tr>
-									<td>TLOxp RPC % Increase</td>
-									<td>{{rpc_increase }}%</td>
+									<td>TU RPC % Increase</td>
+									<td>{{rpc_increase | formatPercent }}</td>
 								</tr>
 								<tr>
-									<td>New RPC rate with TLOxp</td>
-									<td>{{calcRPCwithTLOxp.toFixed(0) }}%</td>
+									<td>New RPC rate with TU</td>
+									<td>{{calcRPCwithTU | formatPercent }}</td>
 								</tr>
 								<tr>
-									<td>TLOxp non-RPC calls mins/hour</td>
-									<td>{{calcNonRPCcallsTLOxp.toFixed(0) | numFormat }}</td>
+									<td>TU non-RPC calls mins/hour</td>
+									<td>{{calcNonRPCcallsTU | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
 									<td>Average calls/hr</td>
-									<td>{{calcTimeSavingsPerRep.toFixed(0) | numFormat }}</td>
+									<td>{{calcTimeSavingsPerRep | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
 									<td>Time savings increasing RPC/hour/team</td>
-									<td>{{calcTimeSavingsPerTeam.toFixed(0) | numFormat }}</td>
+									<td>{{calcTimeSavingsPerTeam | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
 									<td>Time savings increasing RPC/hour/team/month</td>
-									<td>{{calcTimeSavingsPerMonth.toFixed(0) | numFormat }}</td>
+									<td>{{calcTimeSavingsPerMonth | commaSeparateNumber }}</td>
 								</tr>
 							</tbody>
 						</table>
 						<h3>FTE savings/year:</h3>
-						<h2 class="totalFTE">{{calcFTEsavingsPerYr.toFixed(0) }}</h2>
+						<h2 class="totalFTE">{{calcFTEsavingsPerYr | commaSeparateNumber }}</h2>
 					</div> <!-- end right sum -->
 				</div> <!-- end summary row -->
 			</div> <!-- end summary wrapper -->
@@ -260,8 +261,8 @@
 			<p>*Assumed PTP brings account current, or delays charge off</p>
 			<p>** In a recent study conducted by an independent third party, TransUnion RPC phone data beat completive data solution providers, with an increase in RPC % ranging from 29.4% to as much as 282.6%. The data represented RPC % on hits worked – first position only; multiple agencies and asset classes. For the 12 months ending January 2017; 4 million records. </p>
 			<p>This calculator is intended to convey general information, including the potential financial benefits of improving your organization's Right Party Contact (RPC) rates. The information conveyed is not intended, nor should be construed or relied upon as legal advice. Please consult your own legal advisor or attorney with respect to your particular situation. While efforts have been made to ensure the information herein is up-to-date, it's not promised or guaranteed to be current, complete or up-to-date. You should consult a sales representative for further information.</p>
-			<p>Free trial offer is for new customers only, may be limited to certain services in our sole discretion, and subject to additional terms and conditions. TLOxp contains data governed by law and is subject to new account credentialing, which may include a site inspection and end user terms and conditions. Customer is responsible for the site inspection fee. The length of the free trial will be indicated at the time of the account approval.</p>
-			<p>The TLOxp solution is not provided by a consumer reporting agency and does not constitute a consumer report as these terms are defined by the Fair Credit Reporting Act. 15 U.S.C Section 1651 et seq ("FCRA"). The TLOxp solution may not be used in whole or in part as a factor in establishing an individual's creditworthiness or eligibility for credit, insurance or employment not for any other purpose under the FCRA.</p>
+			<p>Free trial offer is for new customers only, may be limited to certain services in our sole discretion, and subject to additional terms and conditions. TU contains data governed by law and is subject to new account credentialing, which may include a site inspection and end user terms and conditions. Customer is responsible for the site inspection fee. The length of the free trial will be indicated at the time of the account approval.</p>
+			<p>The TU solution is not provided by a consumer reporting agency and does not constitute a consumer report as these terms are defined by the Fair Credit Reporting Act. 15 U.S.C Section 1651 et seq ("FCRA"). The TU solution may not be used in whole or in part as a factor in establishing an individual's creditworthiness or eligibility for credit, insurance or employment not for any other purpose under the FCRA.</p>
 		</div>
 	</div>
 </div>
@@ -283,6 +284,21 @@ export default {
             hrs_in_work_month: '160',
         }
 	},
+	filters: {
+		commaSeparateNumber: function (val){
+        	return val.toLocaleString('en', { maximumFractionDigits: 0 });
+      	},
+		commaSeparateCurrency: function (val){
+          	val = val.toFixed(0).replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+        	return '$' + val;
+      	},
+		formatCost: function(val) {
+			return '$' + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+			},
+		formatPercent (val) {
+			return val.toLocaleString('en-US', { maximumFractionDigits: 0 }) + '%';
+		}
+	},
     computed: {
 		calcTotalDQ: function(){
 			var totalDQ = (this.number_of_accounts * this.avg_balance);
@@ -296,20 +312,20 @@ export default {
 			var costOfCures = (this.avg_balance * this.calcNumberOfCures);
 			return costOfCures; 
 		},
-		calcRPCwithTLOxp: function (){
-			var RPCwithTLOxp = ( ( (this.rpc_increase * .01) + 1.0) * (this.current_rpc * .01) * 100 ); 
-			return RPCwithTLOxp;
+		calcRPCwithTU: function (){
+			var RPCwithTU = ( ( (this.rpc_increase * .01) + 1.0) * (this.current_rpc * .01) * 100 ); 
+			return RPCwithTU;
 		},
-		calcNumberCuresWithTLOxp: function (){
-			var totalNumberCures = ( (this.number_of_accounts * this.calcRPCwithTLOxp) * (this.current_ptp * .0001) );
+		calcNumberCuresWithTU: function (){
+			var totalNumberCures = ( (this.number_of_accounts * this.calcRPCwithTU) * (this.current_ptp * .0001) );
 			return totalNumberCures;
 		},
-		calcCostCuresWithTLOxp: function (){
-			var totalCostCures = (this.avg_balance * this.calcNumberCuresWithTLOxp);
+		calcCostCuresWithTU: function (){
+			var totalCostCures = (this.avg_balance * this.calcNumberCuresWithTU);
 			return totalCostCures;
 		},
 		calcTotalMonthlyCures: function (){
-			var totalMonthlyCures = (this.calcCostCuresWithTLOxp - this.calcCostOfCures);
+			var totalMonthlyCures = (this.calcCostCuresWithTU - this.calcCostOfCures);
 			return totalMonthlyCures;
 		},
 		// stating department efficiency
@@ -329,12 +345,12 @@ export default {
 			var costPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.current_rpc * .01) ) );
 			return costPerRPC;
 		},
-		calcTLOxpCostPerRPC: function () {
-			var TLOxpCostPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.calcRPCwithTLOxp * .01) ) );
-			return TLOxpCostPerRPC; 
+		calcTUCostPerRPC: function () {
+			var TUCostPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.calcRPCwithTU * .01) ) );
+			return TUCostPerRPC; 
 		},
 		calcCostSavings: function () {
-			var costSavings= (this.calcCostPerRPC - this.calcTLOxpCostPerRPC);
+			var costSavings= (this.calcCostPerRPC - this.calcTUCostPerRPC);
 			return costSavings;
 		},
 		calcMonthlyRPCsavings: function () {
@@ -342,7 +358,7 @@ export default {
 			return monthlyRPCsavings;
 		},
 		calcMonthlyRPCgained: function () {
-			var monthlyRPCgained = (this.calcMonthlyRPCsavings/this.calcTLOxpCostPerRPC);
+			var monthlyRPCgained = (this.calcMonthlyRPCsavings/this.calcTUCostPerRPC);
 			return monthlyRPCgained;
 		},
 		// FTE Summary 
@@ -358,12 +374,12 @@ export default {
 			var nonRPCcalls = ( 60 - ( ((this.current_rpc * .01) * this.avg_calls) * this.calcAvgMinutes) ) ;
 			return nonRPCcalls;
 		},
-		calcNonRPCcallsTLOxp: function () {
-			var nonRPCcallsTLOxp = ( 60 - ( ( (this.calcRPCwithTLOxp * .01) * this.avg_calls) * this.calcAvgMinutes) );
-			return nonRPCcallsTLOxp;
+		calcNonRPCcallsTU: function () {
+			var nonRPCcallsTU = ( 60 - ( ( (this.calcRPCwithTU * .01) * this.avg_calls) * this.calcAvgMinutes) );
+			return nonRPCcallsTU;
 		},
 		calcTimeSavingsPerRep: function () {
-			var timeSavingsPerRep = (this.calcNonRPCcalls - this.calcNonRPCcallsTLOxp );
+			var timeSavingsPerRep = (this.calcNonRPCcalls - this.calcNonRPCcallsTU );
 			return timeSavingsPerRep;
 		},
 		calcTimeSavingsPerTeam: function () {
