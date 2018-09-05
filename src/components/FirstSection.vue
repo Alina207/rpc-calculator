@@ -17,12 +17,12 @@
 						<div class="form-group">
 							<label for="">Monthly # of accounts > 30 DQ</label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Number of accounts 30 days or greater in delinquent status' }"></span>
-							<vue-numeric class="form-control" v-model.number="number_of_accounts"></vue-numeric>
+							<vue-numeric maxlength="10" class="form-control" v-model.number="number_of_accounts"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average balance</label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average balance of delinquent accounts 30 days or greater past due' }"></span>
-							<vue-numeric class="form-control" currency="$" v-model.number="avg_balance"></vue-numeric>
+							<vue-numeric maxlength="5" class="form-control" currency="$" v-model.number="avg_balance"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Total DQ portfolio balance </label>
@@ -30,14 +30,14 @@
 							<vue-numeric class="form-control" currency="$" v-model.number="calcTotalDQ" disabled></vue-numeric>
 						</div>
 						<div class="form-group currentRPC">
-							<label for="">Current RPC% </label>
+							<label for="">Current RPC%<sup>**</sup></label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'The number of successful efforts divided by the total number of contact efforts' }"></span>
-							<vue-numeric class="form-control" :empty-value="12" v-model.number="current_rpc"></vue-numeric>
+							<vue-numeric maxlength="2" class="form-control" :empty-value="12" v-model.number="current_rpc"></vue-numeric>
 						</div>
 						<div class="form-group currentPTP">
-							<label for="">Current PTP% </label>
+							<label for="">Current PTP%<sup>*</sup> </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'The percent of delinquent accounts that have an agreement such as a promissory note in place' }"></span>
-							<vue-numeric class="form-control" :empty-value="80" v-model.number="current_ptp" ></vue-numeric>
+							<vue-numeric maxlength="2" class="form-control" :empty-value="80" v-model.number="current_ptp" ></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for=""># of cures monthly w/o TransUnion </label>
@@ -98,12 +98,12 @@
 						<div class="form-group">
 							<label for="">Number of reps </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Number of collections department staff members' }"></span>
-							<vue-numeric class="form-control" v-model.number="number_of_reps"></vue-numeric>
+							<vue-numeric maxlength="8" class="form-control" v-model.number="number_of_reps"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average calls/hr </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average number of calls per hour by the entire collections department staff' }"></span>
-							<vue-numeric class="form-control" v-model.number="avg_calls"></vue-numeric>
+							<vue-numeric maxlength="4" class="form-control" v-model.number="avg_calls"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Average min/call </label>
@@ -118,7 +118,7 @@
 						<div class="form-group">
 							<label for="">Average salary/rep </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average annual salary per staff member' }"></span>
-							<vue-numeric class="form-control" currency="$" v-model.number="avg_salary_per_rep"></vue-numeric>
+							<vue-numeric maxlength="6" class="form-control" currency="$" v-model.number="avg_salary_per_rep"></vue-numeric>
 						</div>
 						<div class="form-group">
 							<label for="">Hours in work year </label>
@@ -275,13 +275,13 @@ export default {
             number_of_accounts: '1000',
             avg_balance: '2500',
             current_rpc: '12',
-            current_ptp: '80', // 0
+            current_ptp: '80', 
             rpc_increase: '29',
             number_of_reps: '20',
             avg_calls: '15',
             avg_salary_per_rep: '50000',
             hrs_in_work_year:'2080',
-            hrs_in_work_month: '160',
+			hrs_in_work_month: '160'
         }
 	},
 	filters: {
