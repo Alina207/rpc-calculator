@@ -300,120 +300,98 @@ export default {
 		}
 	},
     computed: {
+		// Section 1
 		calcTotalDQ: function(){
-			if(isNaN()) return 0;
 			var totalDQ = (this.number_of_accounts * this.avg_balance);
 			return totalDQ;
 		},
 		calcNumberOfCures: function (){
-			if(isNaN()) return 0;
 			var numberOfCures = ( (this.number_of_accounts * (this.current_rpc * .01)) * (this.current_ptp * .01) );
 			return numberOfCures;
 		}, 
 		calcCostOfCures: function (){
-			if(isNaN()) return 0;
 			var costOfCures = (this.avg_balance * this.calcNumberOfCures);
 			return costOfCures; 
 		},
 		calcRPCwithTU: function (){
-			if(isNaN()) return 0;
 			var RPCwithTU = ( ( (this.rpc_increase * .01) + 1.0) * (this.current_rpc * .01) * 100 ); 
 			return RPCwithTU;
 		},
 		calcNumberCuresWithTU: function (){
-			if(isNaN()) return 0;
 			var totalNumberCures = ( (this.number_of_accounts * this.calcRPCwithTU) * (this.current_ptp * .0001) );
 			return totalNumberCures;
 		},
 		calcCostCuresWithTU: function (){
-			if(isNaN()) return 0;
 			var totalCostCures = (this.avg_balance * this.calcNumberCuresWithTU);
 			return totalCostCures;
 		},
 		calcTotalMonthlyCures: function (){
-			if(isNaN()) return 0;
 			var totalMonthlyCures = (this.calcCostCuresWithTU - this.calcCostOfCures);
 			return totalMonthlyCures;
 		},
-		// stating department efficiency
+		// Section 2
 		calcAvgMinutes: function (){
-			if(isNaN()) return 0;
 			var avgMinutes = (60/this.avg_calls);
 			return avgMinutes;
 		},
 		calcHrlyCostPerRepYrly: function (){
-			if(isNaN()) return 0;
 			var costPerRepYrly = (this.avg_salary_per_rep/this.hrs_in_work_year);
 			return costPerRepYrly;
 		},
 		calcCostPerCallDE: function () {
-			if(isNaN()) return 0;
 			var costPerCallDE = (this.calcHrlyCostPerRepYrly/this.avg_calls);
 			return costPerCallDE;
 		},
 		calcCostPerRPC: function () {
-			if(isNaN()) return 0;
 			var costPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.current_rpc * .01) ) );
 			return costPerRPC;
 		},
 		calcTUCostPerRPC: function () {
-			if(isNaN()) return 0;
 			var TUCostPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.calcRPCwithTU * .01) ) );
 			return TUCostPerRPC; 
 		},
 		calcCostSavings: function () {
-			if(isNaN()) return 0;
 			var costSavings= (this.calcCostPerRPC - this.calcTUCostPerRPC);
 			return costSavings;
 		},
 		calcMonthlyRPCsavings: function () {
-			if(isNaN()) return 0;
 			var monthlyRPCsavings = ( ( (160 * this.number_of_reps * this.avg_calls) * (this.current_rpc * .01)) * this.calcCostSavings  );
 			return monthlyRPCsavings;
 		},
 		calcMonthlyRPCgained: function () {
-			if(isNaN()) return 0;
 			var monthlyRPCgained = (this.calcMonthlyRPCsavings/this.calcTUCostPerRPC);
 			return monthlyRPCgained;
 		},
-		// FTE Summary 
+		// Section 3
 		calcHrlyCostPerRepMonthly: function () {
-			if(isNaN()) return 0;
 			var hrlyCostPerRepMonthly = ( this.avg_salary_per_rep/(12 * this.hrs_in_work_month) );
 			return hrlyCostPerRepMonthly;
 		},
 		calcCostPerCallFTE: function () {
-			if(isNaN()) return 0;
 			var costPerCallFTE = (this.calcHrlyCostPerRepMonthly/this.avg_calls);
 			return costPerCallFTE;
 		},
 		calcNonRPCcalls: function () {
-			if(isNaN()) return 0;
 			var nonRPCcalls = ( 60 - ( ((this.current_rpc * .01) * this.avg_calls) * this.calcAvgMinutes) ) ;
 			return nonRPCcalls;
 		},
 		calcNonRPCcallsTU: function () {
-			if(isNaN()) return 0;
 			var nonRPCcallsTU = ( 60 - ( ( (this.calcRPCwithTU * .01) * this.avg_calls) * this.calcAvgMinutes) );
 			return nonRPCcallsTU;
 		},
 		calcTimeSavingsPerRep: function () {
-			if(isNaN()) return 0;
 			var timeSavingsPerRep = (this.calcNonRPCcalls - this.calcNonRPCcallsTU );
 			return timeSavingsPerRep;
 		},
 		calcTimeSavingsPerTeam: function () {
-			if(isNaN()) return 0;
 			var timeSavingsPerTeam = (this.calcTimeSavingsPerRep * this.number_of_reps);
 			return timeSavingsPerTeam;
 		},
 		calcTimeSavingsPerMonth: function () {
-			if(isNaN()) return 0;
 			var timeSavingsPerMonth = (this.calcTimeSavingsPerTeam * this.hrs_in_work_month)
 			return timeSavingsPerMonth;
 		},
 		calcFTEsavingsPerYr: function () {
-			if(isNaN()) return 0;
 			var fteSavingsPerYr = ( (this.calcTimeSavingsPerMonth * 12)/(160*12*60) );
 			return fteSavingsPerYr;
 		}
