@@ -30,12 +30,12 @@
 							<vue-numeric class="form-control" currency="$" v-model.number="calcTotalDQ" disabled></vue-numeric>
 						</div>
 						<div class="form-group currentRPC">
-							<label for="">Current RPC%<sup>**</sup></label>
+							<label for="">Current RPC% </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'The number of successful efforts divided by the total number of contact efforts' }"></span>
 							<vue-numeric maxlength="2" class="form-control" :empty-value="12" v-model.number="current_rpc"></vue-numeric>
 						</div>
 						<div class="form-group currentPTP">
-							<label for="">Current PTP%<sup>*</sup> </label>
+							<label for="">Current PTP% <sup>*</sup> </label>
 							<span class="fa tufa-info-circle" v-tooltip="{ content: 'The percent of delinquent accounts that have an agreement such as a promissory note in place' }"></span>
 							<vue-numeric maxlength="2" class="form-control" :empty-value="80" v-model.number="current_ptp" ></vue-numeric>
 						</div>
@@ -59,7 +59,7 @@
 						<table class="table">
 							<tbody>
 								<tr>
-									<td>TU RPC % Increase</td>
+									<td>TU RPC % Increase <sup>**</sup></td>
 									<td>{{rpc_increase | formatPercent }}</td>
 								</tr>
 								<tr>
@@ -272,14 +272,14 @@
 export default {
     data() {
         return {
-            number_of_accounts: '1000',
-            avg_balance: '2500',
+            number_of_accounts: '',
+            avg_balance: '',
             current_rpc: '12',
             current_ptp: '80', 
             rpc_increase: '29',
-            number_of_reps: '20',
-            avg_calls: '15',
-            avg_salary_per_rep: '50000',
+            number_of_reps: '1',
+            avg_calls: '1',
+            avg_salary_per_rep: '1',
             hrs_in_work_year:'2080',
 			hrs_in_work_month: '160'
         }

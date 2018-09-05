@@ -2,11 +2,9 @@ import Vue from 'vue'
 import App from './App.vue'
 import VTooltip from 'v-tooltip'
 import VueNumeric from 'vue-numeric'
-import VeeValidate from 'vee-validate'
  
 Vue.use(VTooltip)
 Vue.use(VueNumeric)
-Vue.use(VeeValidate)
 
 // import "@/scss/_globals.scss";
 
