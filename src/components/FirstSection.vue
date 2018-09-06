@@ -441,10 +441,6 @@ export default {
 
 #FirstSection {
 
-	.container {
-		width: 60em;
-	}
-
 	.header {
 		padding-top: 1em;
 		margin-bottom: 1.5em;
@@ -497,7 +493,6 @@ export default {
 		margin-top: 2em;
 		text-align: center;
 		padding: 2em 0 3em 0;
-		border-right: 1px solid #A9A9A9;
 
 		h3 {
 			font-size: 1.7em;
@@ -659,6 +654,19 @@ export default {
 		margin: 2em 0 2em -1em;
 	}
 }
+
+/////////// Media Queries /////////
+
+@media screen and (min-width: 1440px) {
+
+	#FirstSection {
+		.container {
+			width: 60em;
+		}
+	}
+
+}
+
 
 ////////// Tool-tips ///////////
 // keep outside of #FirstSection
