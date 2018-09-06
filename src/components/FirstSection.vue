@@ -272,14 +272,14 @@
 export default {
     data() {
         return {
-            number_of_accounts: '',
-            avg_balance: '',
+            number_of_accounts: 'null',
+            avg_balance: 'null',
             current_rpc: '12',
             current_ptp: '80', 
             rpc_increase: '29',
-            number_of_reps: '',
-            avg_calls: '',
-            avg_salary_per_rep: '',
+            number_of_reps: 'null',
+            avg_calls: 'null',
+            avg_salary_per_rep: 'null',
             hrs_in_work_year:'2080',
 			hrs_in_work_month: '160'
         }
@@ -331,45 +331,82 @@ export default {
 		},
 		// Section 2
 		calcAvgMinutes: function (){
-			var avgMinutes = (60/this.avg_calls);
-			return avgMinutes;
+			if (!!this.avg_calls) {
+				var avgMinutes = (60/this.avg_calls);
+				return avgMinutes;
+			} else {
+				return 0;
+			}
 		},
 		calcHrlyCostPerRepYrly: function (){
-			var costPerRepYrly = (this.avg_salary_per_rep/this.hrs_in_work_year);
-			return costPerRepYrly;
+			if (!!this.avg_salary_per_rep && !!this.hrs_in_work_year) {
+				var costPerRepYrly = (this.avg_salary_per_rep/this.hrs_in_work_year);
+					return costPerRepYrly;
+			} else {
+				return 0;
+			}
 		},
 		calcCostPerCallDE: function () {
-			var costPerCallDE = (this.calcHrlyCostPerRepYrly/this.avg_calls);
-			return costPerCallDE;
+			if (!!this.calcHrlyCostPerRepYrly && !!this.avg_calls) {
+				var costPerCallDE = (this.calcHrlyCostPerRepYrly/this.avg_calls);
+					return costPerCallDE;
+			} else {
+				return 0;
+			}
 		},
 		calcCostPerRPC: function () {
-			var costPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.current_rpc * .01) ) );
-			return costPerRPC;
+			if (!!this.number_of_reps && !! this.calcHrlyCostPerRepYrly && !!this.number_of_reps && !!this.avg_calls && !!this.current_rpc) {
+				var costPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.current_rpc * .01) ) );
+					return costPerRPC;
+			} else {
+				return 0;
+			}
 		},
 		calcTUCostPerRPC: function () {
-			var TUCostPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.calcRPCwithTU * .01) ) );
-			return TUCostPerRPC; 
+			if (!!this.number_of_reps && !!this.calcHrlyCostPerRepYrly && !!this.number_of_reps && !!this.avg_calls && !!this.calcRPCwithTU) {
+				var TUCostPerRPC = ( (this.number_of_reps*this.calcHrlyCostPerRepYrly)/( (this.number_of_reps*this.avg_calls)*(this.calcRPCwithTU * .01) ) );
+					return TUCostPerRPC; 
+			} else {
+				return 0;
+			}
 		},
 		calcCostSavings: function () {
 			var costSavings= (this.calcCostPerRPC - this.calcTUCostPerRPC);
 			return costSavings;
 		},
 		calcMonthlyRPCsavings: function () {
-			var monthlyRPCsavings = ( ( (160 * this.number_of_reps * this.avg_calls) * (this.current_rpc * .01)) * this.calcCostSavings  );
-			return monthlyRPCsavings;
+			if (!!this.number_of_reps && !!this.avg_calls && !!this.current_rpc && !!this.calcCostSavings) {
+				var monthlyRPCsavings = ( ( (160 * this.number_of_reps * this.avg_calls) * (this.current_rpc * .01)) * this.calcCostSavings  );
+					return monthlyRPCsavings;
+			} else {
+				return 0;
+			}
 		},
 		calcMonthlyRPCgained: function () {
-			var monthlyRPCgained = (this.calcMonthlyRPCsavings/this.calcTUCostPerRPC);
-			return monthlyRPCgained;
+			if (!!this.calcMonthlyRPCsavings && !!this.calcTUCostPerRPC) {
+				var monthlyRPCgained = (this.calcMonthlyRPCsavings/this.calcTUCostPerRPC);
+					return monthlyRPCgained;
+			} else {
+				return 0;
+			}
+			
 		},
 		// Section 3
 		calcHrlyCostPerRepMonthly: function () {
-			var hrlyCostPerRepMonthly = ( this.avg_salary_per_rep/(12 * this.hrs_in_work_month) );
-			return hrlyCostPerRepMonthly;
+			if (!!this.avg_salary_per_rep && !!this.hrs_in_work_month) {
+				var hrlyCostPerRepMonthly = ( this.avg_salary_per_rep/(12 * this.hrs_in_work_month) );
+				return hrlyCostPerRepMonthly;
+			} else {
+				return 0;
+			}		
 		},
 		calcCostPerCallFTE: function () {
-			var costPerCallFTE = (this.calcHrlyCostPerRepMonthly/this.avg_calls);
-			return costPerCallFTE;
+			if (!!this.calcHrlyCostPerRepMonthly && !!this.avg_calls) {
+				var costPerCallFTE = (this.calcHrlyCostPerRepMonthly/this.avg_calls);
+					return costPerCallFTE;
+			} else {
+				return 0;
+			}	
 		},
 		calcNonRPCcalls: function () {
 			var nonRPCcalls = ( 60 - ( ((this.current_rpc * .01) * this.avg_calls) * this.calcAvgMinutes) ) ;
