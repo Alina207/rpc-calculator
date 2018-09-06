@@ -667,6 +667,64 @@ export default {
 
 }
 
+@media screen and (max-width: 991px) {
+
+	#FirstSection {
+
+		.left-block {
+			border-right: 0;
+		}
+
+		.left-sum {
+    		border-right: 0;
+		}
+
+		.right-block {
+			padding-top: 0%;
+		}
+
+		.bottom-right-block {
+			padding: .5em 0 1em 0;
+		}
+
+		.section-2 {
+			.bottom-right-block {
+				padding: .5em 0;
+			}
+		}
+
+		.table {
+			margin-bottom: 0;
+		}
+
+	}	
+
+}
+
+
+@media screen and (max-width: 767px) {
+
+	#FirstSection {
+		font-size: .9em;
+
+		.sectionTitle {
+			padding: 1em 0;
+		}
+
+		.summary {
+			.totalFTE {
+				padding-bottom: 0;
+			}
+		}
+
+		.rpc-footer {
+			margin: 2em 0 0em 0em;
+		}
+
+	}
+
+}
+
 
 ////////// Tool-tips ///////////
 // keep outside of #FirstSection
