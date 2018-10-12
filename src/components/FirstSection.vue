@@ -36,7 +36,7 @@
 						</div>
 						<div class="form-group currentPTP">
 							<label for="">Current PTP% <sup>*</sup> </label>
-							<span class="fa tufa-info-circle" v-tooltip="{ content: 'The percent of delinquent accounts that have an agreement such as a promissory note in place' }"></span>
+							<span class="fa tufa-info-circle" v-tooltip="{ content: 'The percent of delinquent accounts with an agreement to bring the account current' }"></span>
 							<vue-numeric maxlength="2" class="form-control" :empty-value="80" v-model.number="current_ptp" ></vue-numeric>
 						</div>
 						<div class="form-group">
@@ -45,7 +45,7 @@
 							<vue-numeric class="form-control" v-model.number="calcNumberOfCures" disabled></vue-numeric>
 						</div>
 						<div class="form-group">
-							<label for="">Cost of cures monthly w/o TransUnion </label>
+							<label for="">Value of cures monthly w/o TransUnion </label>
 							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'The dollar value of monthly cures without the use of TransUnion solutions' }"></span>
 							<vue-numeric class="form-control" currency="$" v-model.number="calcCostOfCures" disabled></vue-numeric>
 						</div>
@@ -67,7 +67,7 @@
 									<td>{{calcRPCwithTU | formatPercent }}</td>
 								</tr>
 								<tr>
-									<td>PTP</td>
+									<td>PTP %</td>
 									<td>{{current_ptp | formatPercent }}</td>
 								</tr>
 								<tr>
@@ -75,7 +75,7 @@
 									<td>{{calcNumberCuresWithTU | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
-									<td>Cost of Cures w/ TU</td>
+									<td>Value of Cures w/ TU</td>
 									<td>{{calcCostCuresWithTU | commaSeparateCurrency }}</td>
 								</tr>
 							</tbody>
@@ -107,7 +107,7 @@
 						</div>
 						<div class="form-group">
 							<label for="">Average min/call </label>
-							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average number of calls per hour by the entire collections department staff' }"></span>
+							<span class="fa tufa-info-circle" v-tooltip.left="{ content: 'Average length of collections call' }"></span>
 							<vue-numeric class="form-control" v-model.number="calcAvgMinutes" disabled></vue-numeric> 
 						</div>
 						<div class="form-group">
@@ -155,7 +155,7 @@
 								<td>{{calcRPCwithTU | formatPercent }}</td>
 							</tr>
 							<tr>
-								<td>TU cost/RPC</td>
+								<td>Cost/RPC with TU</td>
 								<td>{{calcTUCostPerRPC | formatCost }}</td>
 							</tr>
 							<tr>
@@ -167,7 +167,7 @@
 					<div class="col-lg-12 bottom-right-block">
 						<h3>Monthly RPC Savings</h3>
 						<h2>{{calcMonthlyRPCsavings | commaSeparateCurrency }}</h2>
-						<h3>TU new monthly RPC gained</h3>
+						<h3>New monthly RPC's with TU</h3>
 						<h2>{{calcMonthlyRPCgained | commaSeparateNumber }}</h2>
 					</div>
 				</div> <!-- end right-block-->
@@ -187,7 +187,7 @@
 									<td>{{number_of_reps | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
-									<td>Average calls/hr</td>
+									<td>Min saved per hr for rep</td>
 									<td>{{avg_calls | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
@@ -238,21 +238,21 @@
 									<td>{{calcNonRPCcallsTU | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
-									<td>Average calls/hr</td>
+									<td>Min saved per hr for rep </td>
 									<td>{{calcTimeSavingsPerRep | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
-									<td>Time savings increasing RPC/hour/team</td>
+									<td>Min saved per hr for team</td>
 									<td>{{calcTimeSavingsPerTeam | commaSeparateNumber }}</td>
 								</tr>
 								<tr>
-									<td>Time savings increasing RPC/hour/team/month</td>
+									<td>Min saved per month for team</td>
 									<td>{{calcTimeSavingsPerMonth | commaSeparateNumber }}</td>
 								</tr>
 							</tbody>
 						</table>
 						<h3>FTE savings/year:</h3>
-						<h2 class="totalFTE">{{calcFTEsavingsPerYr | commaSeparateNumber }}</h2>
+						<h2 class="totalFTE">{{calcFTEsavingsPerYr | formatFTE }}</h2>
 					</div> <!-- end right sum -->
 				</div> <!-- end summary row -->
 			</div> <!-- end summary wrapper -->
@@ -280,7 +280,7 @@ export default {
             number_of_reps: 'null',
             avg_calls: 'null',
             avg_salary_per_rep: 'null',
-            hrs_in_work_year:'2080',
+            hrs_in_work_year:'2000',
 			hrs_in_work_month: '160'
         }
 	},
@@ -294,6 +294,9 @@ export default {
       	},
 		formatCost: function(val) {
 			return '$' + val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+			},
+		formatFTE: function(val) {
+			return val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 			},
 		formatPercent (val) {
 			return val.toLocaleString('en-US', { maximumFractionDigits: 0 }) + '%';
